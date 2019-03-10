@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://RainCoat.gd" type="Script" id=1]
 [ext_resource path="res://Animations/Idle1.png" type="Texture" id=2]
 [ext_resource path="res://Animations/Idle2.png" type="Texture" id=3]
 [ext_resource path="res://Animations/Idle3.png" type="Texture" id=4]
@@ -8,15 +8,30 @@
 [ext_resource path="res://Animations/Idle5.png" type="Texture" id=6]
 [ext_resource path="res://Animations/Idle6.png" type="Texture" id=7]
 [ext_resource path="res://Animations/Idle7.png" type="Texture" id=8]
-[ext_resource path="res://Animations/RainCoatWalking1.png" type="Texture" id=9]
-[ext_resource path="res://Animations/RainCoatWalking2.png" type="Texture" id=10]
-[ext_resource path="res://Animations/RainCoatWalking3.png" type="Texture" id=11]
-[ext_resource path="res://Animations/RainCoatWalking4.png" type="Texture" id=12]
-[ext_resource path="res://Animations/RainCoatWalking5.png" type="Texture" id=13]
-[ext_resource path="res://Animations/RainCoatWalking6.png" type="Texture" id=14]
-[ext_resource path="res://Animations/RainCoatWalking7.png" type="Texture" id=15]
-[ext_resource path="res://Animations/RainCoatWalking8.png" type="Texture" id=16]
-[ext_resource path="res://icon.png" type="Texture" id=17]
+[ext_resource path="res://Animations/mi-00.png" type="Texture" id=9]
+[ext_resource path="res://Animations/mi-01.png" type="Texture" id=10]
+[ext_resource path="res://Animations/mi-02.png" type="Texture" id=11]
+[ext_resource path="res://Animations/mi-03.png" type="Texture" id=12]
+[ext_resource path="res://Animations/mi-04.png" type="Texture" id=13]
+[ext_resource path="res://Animations/mi-05.png" type="Texture" id=14]
+[ext_resource path="res://Animations/mi-06.png" type="Texture" id=15]
+[ext_resource path="res://Animations/RainCoatWalking1.png" type="Texture" id=16]
+[ext_resource path="res://Animations/RainCoatWalking2.png" type="Texture" id=17]
+[ext_resource path="res://Animations/RainCoatWalking3.png" type="Texture" id=18]
+[ext_resource path="res://Animations/RainCoatWalking4.png" type="Texture" id=19]
+[ext_resource path="res://Animations/RainCoatWalking5.png" type="Texture" id=20]
+[ext_resource path="res://Animations/RainCoatWalking6.png" type="Texture" id=21]
+[ext_resource path="res://Animations/RainCoatWalking7.png" type="Texture" id=22]
+[ext_resource path="res://Animations/RainCoatWalking8.png" type="Texture" id=23]
+[ext_resource path="res://Animations/mw-00.png" type="Texture" id=24]
+[ext_resource path="res://Animations/mw-01.png" type="Texture" id=25]
+[ext_resource path="res://Animations/mw-02.png" type="Texture" id=26]
+[ext_resource path="res://Animations/mw-03.png" type="Texture" id=27]
+[ext_resource path="res://Animations/mw-04.png" type="Texture" id=28]
+[ext_resource path="res://Animations/mw-05.png" type="Texture" id=29]
+[ext_resource path="res://Animations/mw-06.png" type="Texture" id=30]
+[ext_resource path="res://Mage.gd" type="Script" id=31]
+[ext_resource path="res://icon.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -26,16 +41,26 @@ animations = [ {
 "name": "Idle",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "MageIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "Walking",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "MageWalking",
 "speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10, 6.40789 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -46,12 +71,13 @@ extents = Vector2( 24.8912, 10 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 168.934, 119.057 )
+position = Vector2( 280, 182 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -60,17 +86,43 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
-position = Vector2( 0, -1.7542 )
-scale = Vector2( 1, 2.41962 )
+position = Vector2( 0, 4.77454 )
+scale = Vector2( 1, 3.11358 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D" index="2"]
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="." index="1"]
+
+position = Vector2( 280, 190 )
+scale = Vector2( 1.5, 1.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D2" index="0"]
+
+frames = SubResource( 1 )
+animation = "MageWalking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2" index="1"]
+
+position = Vector2( -2.70247, -0.291373 )
+scale = Vector2( 1.20788, 1.79789 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D2" index="2"]
 
 offset = Vector2( 0, 20 )
 anchor_mode = 1
@@ -97,7 +149,7 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
 position = Vector2( 181.717, 269.252 )
 input_pickable = false
@@ -120,7 +172,7 @@ shape = SubResource( 3 )
 position = Vector2( 111.161, 217.696 )
 scale = Vector2( 307, 6.85467 )
 z_index = -1
-texture = ExtResource( 17 )
+texture = ExtResource( 32 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
 

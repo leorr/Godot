@@ -9,14 +9,14 @@ const UP = Vector2(0,-1)
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 280
-		$AnimatedSprite.play("Walking")
+		$AnimatedSprite.play("MageWalking")
 		$AnimatedSprite.flip_h=0
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -280
-		$AnimatedSprite.play("Walking")
+		$AnimatedSprite.play("MageWalking")
 		$AnimatedSprite.flip_h=1
 	else:
-		$AnimatedSprite.play("Idle")
+		$AnimatedSprite.play("MageIdle")
 		motion.x = 0
 		
 	if is_on_floor():
