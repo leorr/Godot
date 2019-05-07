@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="dopegame"
 run/main_scene="res://base.tscn"
-config/icon="res://icon.png"
+config/icon="res://stupidicon.png"
 
 [display]
 

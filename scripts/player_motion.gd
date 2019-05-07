@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-var speed = 350
+var speed = 600
 
 func get_input():
 	motion = Vector2()
@@ -15,11 +15,14 @@ func get_input():
 
 	if Input.is_action_pressed("ui_up"):
 		motion.y -= 1			#shit is inverted idk why
-		$AnimatedSprite.play("walkup")
+		if(motion.x == 0):
+			$AnimatedSprite.play("walkup")
 
 	if Input.is_action_pressed("ui_down"):
 		motion.y += 1
-		$AnimatedSprite.play("walkdown")
+		if(motion.x == 0):
+			$AnimatedSprite.play("walkdown")
+	
 	motion= motion.normalized() * speed
 
 func _physics_process(delta):
