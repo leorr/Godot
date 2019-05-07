@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/walkright-41.png-39952e7122ff05f13e7544e61e1f7f38.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Animations/walkingsample/walkright-41.png"
+dest_files=[ "res://.import/walkright-41.png-39952e7122ff05f13e7544e61e1f7f38.stex" ]
 
 [params]
 

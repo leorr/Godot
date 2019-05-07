@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/waldown-15.png-cffc8fb9bd586e407ea64ab5bd5968b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Animations/walkingsample/waldown-15.png"
+dest_files=[ "res://.import/waldown-15.png-cffc8fb9bd586e407ea64ab5bd5968b7.stex" ]
 
 [params]
 
