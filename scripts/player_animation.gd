@@ -1,7 +1,7 @@
 extends AnimatedSprite
 #	   2
 #	   |     facing
-#   1-- --1
+#       1-- --1
 #	   |
 #	   3
 
@@ -36,19 +36,19 @@ func get_input():
 		if (facing == 1):
 			if(Input.is_action_just_released("ui_right") || Input.is_action_just_released("ui_left")):
 				play("toidlehorizontal")
-			elif(frame == 4):
+			elif(frame == 2):
 				play("idlehorizontal")
 				
 		elif (facing == 2):
 			if(Input.is_action_just_released("ui_up")):
 				play("toidleup")
-			elif(frame == 4):
+			elif(frame == 2):
 				play("idleup")
 		
 		elif (facing == 3):
 			if(Input.is_action_just_released("ui_down")):
 				play("toidledown")
-			elif(frame == 4):
+			elif(frame == 2):
 				play("idledown")
 
 func _process(delta):

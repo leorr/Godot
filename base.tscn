@@ -1,110 +1,137 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
-[ext_resource path="res://assets/walking/walkup-0.png" type="Texture" id=2]
-[ext_resource path="res://assets/walking/walkup-1.png" type="Texture" id=3]
-[ext_resource path="res://assets/walking/walkup-2.png" type="Texture" id=4]
-[ext_resource path="res://assets/walking/walkup-3.png" type="Texture" id=5]
-[ext_resource path="res://assets/walking/walkup-4.png" type="Texture" id=6]
-[ext_resource path="res://assets/walking/walkup-5.png" type="Texture" id=7]
-[ext_resource path="res://assets/walking/walkup-6.png" type="Texture" id=8]
-[ext_resource path="res://assets/walking/walkup-7.png" type="Texture" id=9]
-[ext_resource path="res://assets/walking/walkup-8.png" type="Texture" id=10]
-[ext_resource path="res://assets/walking/walkup-9.png" type="Texture" id=11]
-[ext_resource path="res://assets/walking/walkup-10.png" type="Texture" id=12]
-[ext_resource path="res://assets/walking/walkup-11.png" type="Texture" id=13]
-[ext_resource path="res://assets/walking/walkdown-0.png" type="Texture" id=14]
-[ext_resource path="res://assets/walking/walkdown-1.png" type="Texture" id=15]
-[ext_resource path="res://assets/walking/walkdown-2.png" type="Texture" id=16]
-[ext_resource path="res://assets/walking/walkdown-3.png" type="Texture" id=17]
-[ext_resource path="res://assets/walking/walkdown-4.png" type="Texture" id=18]
-[ext_resource path="res://assets/walking/walkdown-5.png" type="Texture" id=19]
-[ext_resource path="res://assets/walking/walkdown-6.png" type="Texture" id=20]
-[ext_resource path="res://assets/walking/walkdown-7.png" type="Texture" id=21]
-[ext_resource path="res://assets/walking/walkdown-8.png" type="Texture" id=22]
-[ext_resource path="res://assets/walking/walkdown-9.png" type="Texture" id=23]
-[ext_resource path="res://assets/walking/walkdown-10.png" type="Texture" id=24]
-[ext_resource path="res://assets/walking/walkdown-11.png" type="Texture" id=25]
-[ext_resource path="res://assets/transitions/walktoidleup-0.png" type="Texture" id=26]
-[ext_resource path="res://assets/transitions/walktoidleup-1.png" type="Texture" id=27]
-[ext_resource path="res://assets/transitions/walktoidleup-2.png" type="Texture" id=28]
-[ext_resource path="res://assets/idle/idleup-0.png" type="Texture" id=29]
-[ext_resource path="res://assets/idle/idleup-1.png" type="Texture" id=30]
-[ext_resource path="res://assets/transitions/walktoidlehorizontal-0.png" type="Texture" id=31]
-[ext_resource path="res://assets/transitions/walktoidlehorizontal-1.png" type="Texture" id=32]
-[ext_resource path="res://assets/transitions/walktoidlehorizontal-2.png" type="Texture" id=33]
-[ext_resource path="res://assets/idle/idlehorizontal-0.png" type="Texture" id=34]
-[ext_resource path="res://assets/idle/idlehorizontal-1.png" type="Texture" id=35]
-[ext_resource path="res://assets/transitions/walktoidledown-0.png" type="Texture" id=36]
-[ext_resource path="res://assets/transitions/walktoidledown-1.png" type="Texture" id=37]
-[ext_resource path="res://assets/transitions/walktoidledown-2.png" type="Texture" id=38]
-[ext_resource path="res://assets/idle/idledown-0.png" type="Texture" id=39]
-[ext_resource path="res://assets/idle/idledown-1.png" type="Texture" id=40]
-[ext_resource path="res://assets/walking/walkhorizontal-0.png" type="Texture" id=41]
-[ext_resource path="res://assets/walking/walkhorizontal-1.png" type="Texture" id=42]
-[ext_resource path="res://assets/walking/walkhorizontal-2.png" type="Texture" id=43]
-[ext_resource path="res://assets/walking/walkhorizontal-3.png" type="Texture" id=44]
-[ext_resource path="res://assets/walking/walkhorizontal-4.png" type="Texture" id=45]
-[ext_resource path="res://assets/walking/walkhorizontal-5.png" type="Texture" id=46]
-[ext_resource path="res://assets/walking/walkhorizontal-6.png" type="Texture" id=47]
-[ext_resource path="res://assets/walking/walkhorizontal-7.png" type="Texture" id=48]
-[ext_resource path="res://assets/walking/walkhorizontal-8.png" type="Texture" id=49]
-[ext_resource path="res://assets/walking/walkhorizontal-9.png" type="Texture" id=50]
-[ext_resource path="res://assets/walking/walkhorizontal-10.png" type="Texture" id=51]
-[ext_resource path="res://assets/walking/walkhorizontal-11.png" type="Texture" id=52]
-[ext_resource path="res://scripts/player_animation.gd" type="Script" id=53]
-[ext_resource path="res://test.tres" type="TileSet" id=54]
+[ext_resource path="res://assets/player/idledown-1.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/idledown-2.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/idledown-3.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/idledown-4.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/toidlehorizontal-1.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/toidlehorizontal-2.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/toidlehorizontal-3.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/walkhorizontal-1.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/walkhorizontal-2.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/walkhorizontal-3.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/walkhorizontal-4.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/walkhorizontal-5.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/walkhorizontal-6.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/walkhorizontal-7.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/walkhorizontal-8.png" type="Texture" id=16]
+[ext_resource path="res://assets/player/walkhorizontal-9.png" type="Texture" id=17]
+[ext_resource path="res://assets/player/walkhorizontal-10.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/walkhorizontal-11.png" type="Texture" id=19]
+[ext_resource path="res://assets/player/walkhorizontal-12.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/toidledown-1.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/toidledown-2.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/toidledown-3.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/idlehorizontal-1.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/idlehorizontal-2.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/idlehorizontal-3.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/idlehorizontal-4.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/idleup-1.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/idleup-2.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/idleup-3.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/idleup-4.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/walkdown-1.png" type="Texture" id=32]
+[ext_resource path="res://assets/player/walkdown-2.png" type="Texture" id=33]
+[ext_resource path="res://assets/player/walkdown-3.png" type="Texture" id=34]
+[ext_resource path="res://assets/player/walkdown-4.png" type="Texture" id=35]
+[ext_resource path="res://assets/player/walkdown-5.png" type="Texture" id=36]
+[ext_resource path="res://assets/player/walkdown-6.png" type="Texture" id=37]
+[ext_resource path="res://assets/player/walkdown-7.png" type="Texture" id=38]
+[ext_resource path="res://assets/player/walkdown-8.png" type="Texture" id=39]
+[ext_resource path="res://assets/player/walkdown-9.png" type="Texture" id=40]
+[ext_resource path="res://assets/player/walkdown-10.png" type="Texture" id=41]
+[ext_resource path="res://assets/player/walkdown-11.png" type="Texture" id=42]
+[ext_resource path="res://assets/player/walkdown-12.png" type="Texture" id=43]
+[ext_resource path="res://assets/player/walkup-1.png" type="Texture" id=44]
+[ext_resource path="res://assets/player/walkup-2.png" type="Texture" id=45]
+[ext_resource path="res://assets/player/walkup-3.png" type="Texture" id=46]
+[ext_resource path="res://assets/player/walkup-4.png" type="Texture" id=47]
+[ext_resource path="res://assets/player/walkup-5.png" type="Texture" id=48]
+[ext_resource path="res://assets/player/walkup-6.png" type="Texture" id=49]
+[ext_resource path="res://assets/player/walkup-7.png" type="Texture" id=50]
+[ext_resource path="res://assets/player/walkup-8.png" type="Texture" id=51]
+[ext_resource path="res://assets/player/walkup-9.png" type="Texture" id=52]
+[ext_resource path="res://assets/player/walkup-10.png" type="Texture" id=53]
+[ext_resource path="res://assets/player/walkup-11.png" type="Texture" id=54]
+[ext_resource path="res://assets/player/walkup-12.png" type="Texture" id=55]
+[ext_resource path="res://assets/player/toidleup-1.png" type="Texture" id=56]
+[ext_resource path="res://assets/player/toidleup-2.png" type="Texture" id=57]
+[ext_resource path="res://assets/player/toidleup-3.png" type="Texture" id=58]
+[ext_resource path="res://scripts/player_animation.gd" type="Script" id=59]
+[ext_resource path="res://assets/tilemap/tilemapbase.png" type="Texture" id=60]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 22.1531, 16.9595 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.82101, 5.38803 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walkup",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "walkdown",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": false,
-"name": "toidleup",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
-"loop": false,
-"name": "toidlehorizontal",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": false,
-"name": "toidledown",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 40 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idledown",
-"speed": 2.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "toidlehorizontal",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "walkhorizontal",
-"speed": 14.0
+"speed": 16.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 34 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "toidledown",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "idlehorizontal",
-"speed": 2.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "idleup",
-"speed": 2.0
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "walkdown",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ) ],
+"loop": true,
+"name": "walkup",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": false,
+"name": "toidleup",
+"speed": 18.0
 } ]
+
+[sub_resource type="TileSet" id=3]
+0/name = "tilemapbase.png 0"
+0/texture = ExtResource( 60 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 512 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 1 ), 292, Vector2( 0, 2 ), 292, Vector2( 0, 4 ), 511, Vector2( 0, 5 ), 511, Vector2( 0, 6 ), 511, Vector2( 0, 7 ), 511, Vector2( 1, 0 ), 448, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 511, Vector2( 1, 3 ), 7, Vector2( 1, 4 ), 511, Vector2( 1, 5 ), 511, Vector2( 1, 6 ), 511, Vector2( 1, 7 ), 511, Vector2( 2, 0 ), 448, Vector2( 2, 1 ), 511, Vector2( 2, 2 ), 511, Vector2( 2, 3 ), 7, Vector2( 2, 4 ), 511, Vector2( 2, 5 ), 511, Vector2( 2, 6 ), 511, Vector2( 2, 7 ), 511, Vector2( 3, 1 ), 73, Vector2( 3, 2 ), 73, Vector2( 3, 4 ), 511, Vector2( 3, 5 ), 511, Vector2( 3, 6 ), 511, Vector2( 3, 7 ), 511, Vector2( 4, 0 ), 255, Vector2( 4, 1 ), 219, Vector2( 4, 2 ), 219, Vector2( 4, 3 ), 507, Vector2( 4, 4 ), 511, Vector2( 4, 7 ), 511, Vector2( 5, 0 ), 63, Vector2( 5, 3 ), 504, Vector2( 5, 5 ), 511, Vector2( 5, 6 ), 511, Vector2( 6, 0 ), 63, Vector2( 6, 3 ), 504, Vector2( 6, 5 ), 511, Vector2( 6, 6 ), 511, Vector2( 7, 0 ), 447, Vector2( 7, 1 ), 438, Vector2( 7, 2 ), 438, Vector2( 7, 3 ), 510, Vector2( 7, 4 ), 511, Vector2( 7, 7 ), 511 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
 
 [node name="Root" type="Node2D"]
 
@@ -112,23 +139,25 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="feet" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, 75 )
-shape = SubResource( 4 )
+position = Vector2( 0.250343, 17.4621 )
+scale = Vector2( 1, 0.36 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 0, 2 )
-frames = SubResource( 3 )
+position = Vector2( 0, -1 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
 animation = "toidledown"
-frame = 4
+frame = 2
 playing = true
-script = ExtResource( 53 )
+script = ExtResource( 59 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 0.1, 0.1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
-tile_set = ExtResource( 54 )
+tile_set = SubResource( 3 )
 format = 1
-tile_data = PoolIntArray( -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -3, 0, 0, -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 0, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 0, 0, 131069, 0, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 0, 0, 196605, 0, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 1, 0, 131074, 2, 0, 131075, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 1, 0, 196610, 0, 0, 196611, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 1, 0, 262146, 0, 0, 262147, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 524285, 0, 0, 524286, 0, 0, 524287, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 2, 0, 589821, 0, 0, 589822, 0, 0, 589823, 2, 0, 524288, 1, 0, 524289, 1, 0, 524290, 2, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 2, 0, 589825, 2, 0 )
+tile_data = PoolIntArray( -131074, 0, 0, -131073, 0, 196614, -196608, 0, 196613, -196607, 0, 196613, -196606, 0, 196614, -196605, 0, 0, -65538, 0, 131079, -65537, 0, 262151, -131072, 0, 393221, -131071, 0, 262148, -131070, 0, 131073, -131069, 0, 131076, -2, 0, 65543, -1, 0, 262148, -65536, 0, 458759, -65535, 0, 458755, -65534, 0, 262147, -65533, 0, 131076, 65534, 0, 131079, 65535, 0, 131074, 0, 0, 262147, 1, 0, 458753, 2, 0, 393216, 3, 0, 131076, 131070, 0, 65543, 131071, 0, 458756, 65536, 0, 393221, 65537, 0, 65537, 65538, 0, 458752, 65539, 0, 65540, 196606, 0, 0, 196607, 0, 6, 131072, 0, 6, 131073, 0, 5, 131074, 0, 5, 131075, 0, 0 )
