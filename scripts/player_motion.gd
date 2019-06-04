@@ -21,5 +21,6 @@ func get_input():
 	motion= motion.normalized() * speed
 
 func _physics_process(delta):
-    get_input()
-    move_and_slide(motion)
+	set_z_index(get_position().y)
+	get_input()
+	move_and_slide(motion)
