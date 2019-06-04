@@ -22,6 +22,5 @@ func get_input():
 
 func _physics_process(delta):
 	set_z_index(get_position().y+50)
-	print(get_z_index()," player")
 	get_input()
 	move_and_slide(motion)

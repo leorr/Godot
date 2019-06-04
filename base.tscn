@@ -11,4 +11,4 @@ z_as_relative = false
 
 [node name="PostSign" parent="." instance=ExtResource( 2 )]
 position = Vector2( -11.049, 0 )
-frame = 7
+frame = 5
