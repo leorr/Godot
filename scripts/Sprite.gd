@@ -8,4 +8,5 @@ extends AnimatedSprite
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_z_index(13+get_position().y)
+	set_z_index(get_position().y)
+	print(get_z_index()," props")
