@@ -19,20 +19,19 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1.39816, 5.76484 )
+extents = Vector2( 1.39816, 3.32249 )
 
 [node name="PostSign" type="AnimatedSprite"]
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 1.5, 1.5 )
 z_index = -1
 z_as_relative = false
 frames = SubResource( 1 )
 animation = "Lamp"
-frame = 3
 playing = true
 script = ExtResource( 9 )
 
 [node name="Colider" type="StaticBody2D" parent="."]
 
 [node name="Colider_Shape" type="CollisionShape2D" parent="Colider"]
-position = Vector2( -15.3308, 21.2192 )
+position = Vector2( -15.3308, 23.6874 )
 shape = SubResource( 2 )
