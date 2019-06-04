@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="dopegame"
 run/main_scene="res://base.tscn"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://stupidicon.png"
 
 [debug]
