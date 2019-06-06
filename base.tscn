@@ -13,11 +13,10 @@ z_as_relative = false
 
 [node name="PostSign" parent="." instance=ExtResource( 2 )]
 position = Vector2( -11.049, -78 )
-frame = 0
+frame = 5
 
 [node name="PostSign2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -11.049, 68 )
-frame = 7
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 44, 41 )
