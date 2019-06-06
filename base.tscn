@@ -13,10 +13,11 @@ z_as_relative = false
 
 [node name="PostSign" parent="." instance=ExtResource( 2 )]
 position = Vector2( -11.049, -78 )
-frame = 5
+frame = 4
 
 [node name="PostSign2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -11.049, 68 )
+frame = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 44, 41 )
@@ -25,7 +26,7 @@ texture = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 44, -92.5404 )
+position = Vector2( 43.7497, -92.5404 )
 z_index = -4096
 z_as_relative = false
 texture = ExtResource( 4 )
