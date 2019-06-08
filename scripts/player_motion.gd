@@ -27,8 +27,8 @@ func _physics_process(delta):
 
 
 func _on_street_body_entered(body):
-	set_position(Vector2(get_position().x,get_position().y+4))
+	set_position(Vector2(get_position().x,get_position().y+3))
 
 
 func _on_street_body_exited(body):
-		set_position(Vector2(get_position().x,get_position().y-4))
+		set_position(Vector2(get_position().x,get_position().y-3))

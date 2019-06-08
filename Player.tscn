@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/walkdown-1.png" type="Texture" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://assets/player/idleup-4.png" type="Texture" id=58]
 [ext_resource path="res://scripts/player_animation.gd" type="Script" id=59]
 [ext_resource path="res://assets/props/fog.png" type="Texture" id=60]
+[ext_resource path="res://assets/props/lightfading.png" type="Texture" id=61]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.90028, 10.4226 )
@@ -115,7 +116,7 @@ animations = [ {
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
 cull_mode = 2
-polygon = PoolVector2Array( -4.7408, 1.48746, -1.93278, -11.8201, 2.09612, -10.4771, 3.19491, -2.17517 )
+polygon = PoolVector2Array( -3.12356, -10.8675, 3.0685, -10.8675 )
 
 [node name="Player_Body" type="KinematicBody2D"]
 z_as_relative = false
@@ -141,7 +142,6 @@ position = Vector2( 0.307783, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "idledown"
-frame = 4
 playing = true
 script = ExtResource( 59 )
 __meta__ = {
@@ -152,15 +152,29 @@ __meta__ = {
 position = Vector2( 3, -65 )
 texture = ExtResource( 60 )
 offset = Vector2( 0, 15 )
-color = Color( 0.662745, 0.662745, 0.662745, 1 )
 mode = 3
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
 range_layer_max = 512
+shadow_gradient_length = 10.0
+shadow_filter = 2
+shadow_filter_smooth = 64.0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="playerlight" type="Light2D" parent="fog"]
+position = Vector2( -3, 79 )
+texture = ExtResource( 61 )
+texture_scale = 2.0
+color = Color( 0.780392, 0.996078, 1, 1 )
+energy = 2.0
+range_z_min = -4096
+range_z_max = 4096
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 3 )
