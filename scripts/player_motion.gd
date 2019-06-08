@@ -21,6 +21,14 @@ func get_input():
 	motion= motion.normalized() * speed
 
 func _physics_process(delta):
-	set_z_index(get_position().y+40)
+	set_z_index(get_position().y)
 	get_input()
 	move_and_slide(motion)
+
+
+func _on_street_body_entered(body):
+	set_position(Vector2(get_position().x,get_position().y+4))
+
+
+func _on_street_body_exited(body):
+		set_position(Vector2(get_position().x,get_position().y-4))

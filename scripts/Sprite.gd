@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,5 +8,4 @@ extends AnimatedSprite
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_z_index(get_position().y)
-	print(get_z_index()," props")
+	set_z_index(get_position().y+15)

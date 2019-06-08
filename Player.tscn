@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/walkdown-1.png" type="Texture" id=2]
@@ -63,17 +63,19 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.90028, 10.4226 )
 
+[sub_resource type="CanvasItemMaterial" id=2]
+
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walkdown",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "walkhorizontal",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": true,
@@ -83,7 +85,7 @@ animations = [ {
 "frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
 "loop": true,
 "name": "walkup",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
 "loop": true,
@@ -111,20 +113,22 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 5.81229
+height = 17.5939
 
-[node name="Player_Body" type="KinematicBody2D" parent="."]
-position = Vector2( 5.84819, 11.6534 )
+[node name="Player_Body" type="KinematicBody2D"]
 z_as_relative = false
 script = ExtResource( 1 )
 
-[node name="Colision" type="CollisionShape2D" parent="Player_Body"]
+[node name="Colision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 10 )
 scale = Vector2( 1, 0.36 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Player_Body"]
-show_behind_parent = true
+[node name="Sprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.741176, 0.741176, 0.741176, 1 )
+material = SubResource( 2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "idledown"
@@ -135,6 +139,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera" type="Camera2D" parent="Player_Body"]
+[node name="Area2D" type="Area2D" parent="Sprite"]
+light_mask = 31
+use_parent_material = true
+scale = Vector2( 2, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+use_parent_material = true
+shape = SubResource( 4 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 1, 0 )
 current = true
-zoom = Vector2( 0.13, 0.13 )
+zoom = Vector2( 0.15, 0.15 )
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
