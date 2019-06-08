@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/walkdown-1.png" type="Texture" id=2]
@@ -63,9 +63,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.90028, 10.4226 )
 
-[sub_resource type="CanvasItemMaterial" id=2]
-
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
@@ -113,40 +111,14 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 5.81229
-height = 17.5939
+[sub_resource type="OccluderPolygon2D" id=3]
+resource_local_to_scene = true
+cull_mode = 2
+polygon = PoolVector2Array( -11.973, 10.0552, -14.4065, -1.45204, -13.3346, -14.4285, -13.592, -22.3429, -11.0182, -25.7532, -4.455, -25.8176, -2.00989, -21.7638, -2.58899, -15.0719, -1.8686, -2.55595, -3.88595, 10.0866 )
 
 [node name="Player_Body" type="KinematicBody2D"]
 z_as_relative = false
 script = ExtResource( 1 )
-
-[node name="Colision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 10 )
-scale = Vector2( 1, 0.36 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="."]
-self_modulate = Color( 0.741176, 0.741176, 0.741176, 1 )
-material = SubResource( 2 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 3 )
-animation = "idledown"
-frame = 7
-playing = true
-script = ExtResource( 59 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="Sprite"]
-light_mask = 31
-use_parent_material = true
-scale = Vector2( 2, 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
-use_parent_material = true
-shape = SubResource( 4 )
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 1, 0 )
@@ -156,3 +128,26 @@ drag_margin_left = 0.5
 drag_margin_top = 0.5
 drag_margin_right = 0.5
 drag_margin_bottom = 0.5
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10 )
+scale = Vector2( 1, 0.36 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.741176, 0.741176, 0.741176, 1 )
+position = Vector2( 0.307783, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+animation = "idledown"
+frame = 5
+playing = true
+script = ExtResource( 59 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 4, 0 )
+scale = Vector2( 0.5, 0.5 )
+occluder = SubResource( 3 )
