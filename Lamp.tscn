@@ -45,10 +45,10 @@ __meta__ = {
 }
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 3.51319, -8.04272 )
-scale = Vector2( 0.9, 0.607 )
+position = Vector2( 3.40411, -6.34089 )
+scale = Vector2( 0.726733, 0.541791 )
 texture = SubResource( 2 )
-offset = Vector2( 0, 25 )
+offset = Vector2( 0, 20 )
 texture_scale = 2.0
 color = Color( 1, 0.654902, 0.141176, 1 )
 range_z_min = -4096
@@ -56,16 +56,17 @@ range_z_max = 4096
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
-shadow_gradient_length = 0.1
+shadow_gradient_length = 0.3
 shadow_filter = 2
-shadow_filter_smooth = 30.0
+shadow_filter_smooth = 45.0
 
 [node name="Light2D2" type="Light2D" parent="."]
 position = Vector2( 3.51319, 23.261 )
 scale = Vector2( 0.671989, 0.720509 )
 texture = SubResource( 3 )
-texture_scale = 2.0
+texture_scale = 4.0
 color = Color( 1, 0.654902, 0.141176, 1 )
+energy = 2.0
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
