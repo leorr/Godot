@@ -61,18 +61,19 @@ scale = Vector2( 1.01633, 0.76026 )
 texture = SubResource( 4 )
 
 [node name="reflection" type="Light2D" parent="."]
-position = Vector2( 4.75, -4.00566 )
+position = Vector2( 4.75, 15.9943 )
 scale = Vector2( 1, 0.95503 )
 texture = SubResource( 5 )
 offset = Vector2( 0, 15 )
 texture_scale = 2.0
 color = Color( 1, 0.584314, 0.101961, 1 )
+energy = 1.2
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_buffer_size = 8192
-shadow_gradient_length = 0.5
+shadow_gradient_length = 2.0
 shadow_filter = 5
 shadow_filter_smooth = 64.0

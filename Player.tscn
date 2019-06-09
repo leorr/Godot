@@ -66,7 +66,6 @@
 extents = Vector2( 3.90028, 10.4226 )
 
 [sub_resource type="CanvasItemMaterial" id=2]
-light_mode = 1
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -117,8 +116,8 @@ animations = [ {
 } ]
 
 [sub_resource type="OccluderPolygon2D" id=4]
-cull_mode = 2
-polygon = PoolVector2Array( -3.41919, 3.69625, -2.01973, -10.7789, -0.947748, -12.4634, 0.0731888, -12.8718, 1.45145, -12.2592, 2.11506, -11.0851, 3.40835, 3.69625, 1.48264, 5.27183, 0.0383472, 5.8408, -1.36217, 5.27183 )
+cull_mode = 1
+polygon = PoolVector2Array( -5.52757, 3.62405, -2.5267, -7.60998, -3.75782, -9.99529, -1.83419, -12.6884, 0.0125046, -13.227, 2.47476, -12.6884, 4.01367, -9.99529, 3.09032, -7.53304, 5.78341, 3.62405, 3.85978, 5.47074, 0.0383472, 5.8408, -3.06531, 5.54769 )
 
 [node name="Player_Body" type="KinematicBody2D"]
 modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
@@ -140,7 +139,6 @@ scale = Vector2( 1, 0.36 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.564706, 1, 0.917647, 1 )
 material = SubResource( 2 )
 position = Vector2( 0.307783, 0 )
 scale = Vector2( 0.5, 0.5 )
@@ -171,7 +169,7 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 11 )
 texture = ExtResource( 61 )
 texture_scale = 0.75
 color = Color( 0.619608, 1, 0.956863, 1 )
@@ -179,7 +177,6 @@ range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
 range_layer_max = 512
-shadow_enabled = true
 shadow_gradient_length = 0.3
 shadow_filter = 1
 shadow_filter_smooth = 17.0
