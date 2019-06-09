@@ -59,16 +59,16 @@
 [ext_resource path="res://assets/player/idleup-3.png" type="Texture" id=57]
 [ext_resource path="res://assets/player/idleup-4.png" type="Texture" id=58]
 [ext_resource path="res://scripts/player_animation.gd" type="Script" id=59]
-[ext_resource path="res://assets/props/fog.png" type="Texture" id=60]
+[ext_resource path="res://assets/lights/fog-export.png" type="Texture" id=60]
 [ext_resource path="res://assets/lights/light-export.png" type="Texture" id=61]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.90028, 10.4226 )
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 1
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
@@ -116,7 +116,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=4]
 cull_mode = 2
 polygon = PoolVector2Array( -3.41919, 3.69625, -2.01973, -10.7789, -0.947748, -12.4634, 0.0731888, -12.8718, 1.45145, -12.2592, 2.11506, -11.0851, 3.40835, 3.69625, 1.48264, 5.27183, 0.0383472, 5.8408, -1.36217, 5.27183 )
 
@@ -140,15 +140,20 @@ scale = Vector2( 1, 0.36 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-self_modulate = Color( 0.741176, 0.741176, 0.741176, 1 )
-material = SubResource( 4 )
+material = SubResource( 2 )
 position = Vector2( 0.307783, 0 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "idledown"
-frame = 4
+frame = 3
 playing = true
 script = ExtResource( 59 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+show_behind_parent = true
+position = Vector2( -0.615566, 2 )
+scale = Vector2( 2, 2 )
+occluder = SubResource( 4 )
 
 [node name="fog" type="Light2D" parent="."]
 position = Vector2( 3, -65 )
@@ -166,15 +171,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2( 0, 1 )
-occluder = SubResource( 3 )
-
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 0, 4 )
 texture = ExtResource( 61 )
-color = Color( 0.619608, 1, 0.956863, 1 )
-energy = 0.7
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
