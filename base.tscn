@@ -12,30 +12,7 @@ z_as_relative = true
 
 [node name="street" parent="." instance=ExtResource( 2 )]
 
-[node name="PostSign3" parent="street" instance=ExtResource( 3 )]
-position = Vector2( -53, -22 )
-z_as_relative = true
-
-[node name="street3" parent="." instance=ExtResource( 2 )]
-position = Vector2( -160, 1 )
-
-[node name="PostSign3" parent="street3" instance=ExtResource( 3 )]
-position = Vector2( -53, -22 )
-z_as_relative = true
-
-[node name="street4" parent="." instance=ExtResource( 2 )]
-position = Vector2( -160, 143 )
-
-[node name="street2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 142 )
-
-[node name="PostSign3" parent="." instance=ExtResource( 3 )]
-position = Vector2( -213, 121 )
+[node name="PostSign" parent="." instance=ExtResource( 3 )]
+position = Vector2( -49.0422, 7.06713 )
 [connection signal="body_entered" from="street" to="Player" method="_on_street_body_entered"]
 [connection signal="body_exited" from="street" to="Player" method="_on_street_body_exited"]
-[connection signal="body_entered" from="street3" to="Player" method="_on_street_body_entered"]
-[connection signal="body_exited" from="street3" to="Player" method="_on_street_body_exited"]
-[connection signal="body_entered" from="street4" to="Player" method="_on_street_body_entered"]
-[connection signal="body_exited" from="street4" to="Player" method="_on_street_body_exited"]
-[connection signal="body_entered" from="street2" to="Player" method="_on_street_body_entered"]
-[connection signal="body_exited" from="street2" to="Player" method="_on_street_body_exited"]
