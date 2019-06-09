@@ -13,7 +13,12 @@ z_as_relative = true
 [node name="street" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 6 )
 
+[node name="street2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 6 )
+
 [node name="PostSign" parent="." instance=ExtResource( 3 )]
 position = Vector2( -49.0422, 7.06713 )
 [connection signal="body_entered" from="street" to="Player" method="_on_street_body_entered"]
 [connection signal="body_exited" from="street" to="Player" method="_on_street_body_exited"]
+[connection signal="body_entered" from="street2" to="Player" method="_on_street_body_entered"]
+[connection signal="body_exited" from="street2" to="Player" method="_on_street_body_exited"]
