@@ -11,6 +11,7 @@ position = Vector2( -34.8272, 48.0343 )
 z_as_relative = true
 
 [node name="street" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 6 )
 
 [node name="PostSign" parent="." instance=ExtResource( 3 )]
 position = Vector2( -49.0422, 7.06713 )

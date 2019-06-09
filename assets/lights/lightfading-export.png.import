@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fog.png-3b30d27b8ec253eafe7fc773d4e47789.stex"
+path="res://.import/lightfading-export.png-111f4f0ba5f858ed6783c825a8524818.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/fog.png"
-dest_files=[ "res://.import/fog.png-3b30d27b8ec253eafe7fc773d4e47789.stex" ]
+source_file="res://assets/lights/lightfading-export.png"
+dest_files=[ "res://.import/lightfading-export.png-111f4f0ba5f858ed6783c825a8524818.stex" ]
 
 [params]
 

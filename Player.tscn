@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/walkdown-1.png" type="Texture" id=2]
@@ -60,9 +60,13 @@
 [ext_resource path="res://assets/player/idleup-4.png" type="Texture" id=58]
 [ext_resource path="res://scripts/player_animation.gd" type="Script" id=59]
 [ext_resource path="res://assets/props/fog.png" type="Texture" id=60]
+[ext_resource path="res://assets/lights/light-export.png" type="Texture" id=61]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.90028, 10.4226 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 1
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -113,18 +117,18 @@ animations = [ {
 } ]
 
 [sub_resource type="OccluderPolygon2D" id=3]
-closed = false
 cull_mode = 2
-polygon = PoolVector2Array( -3.124, -12, 3.069, -12 )
+polygon = PoolVector2Array( -3.41919, 3.69625, -2.01973, -10.7789, -0.947748, -12.4634, 0.0731888, -12.8718, 1.45145, -12.2592, 2.11506, -11.0851, 3.40835, 3.69625, 1.48264, 5.27183, 0.0383472, 5.8408, -1.36217, 5.27183 )
 
 [node name="Player_Body" type="KinematicBody2D"]
+modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
 z_as_relative = false
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 1, 0 )
 current = true
-zoom = Vector2( 0.12, 0.12 )
+zoom = Vector2( 0.15, 0.15 )
 drag_margin_left = 0.5
 drag_margin_top = 0.5
 drag_margin_right = 0.5
@@ -137,6 +141,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 self_modulate = Color( 0.741176, 0.741176, 0.741176, 1 )
+material = SubResource( 4 )
 position = Vector2( 0.307783, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
@@ -144,9 +149,6 @@ animation = "idledown"
 frame = 4
 playing = true
 script = ExtResource( 59 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="fog" type="Light2D" parent="."]
 position = Vector2( 3, -65 )
@@ -165,4 +167,19 @@ __meta__ = {
 }
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 0, 1 )
 occluder = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, 4 )
+texture = ExtResource( 61 )
+color = Color( 0.619608, 1, 0.956863, 1 )
+energy = 0.7
+range_z_min = -4096
+range_z_max = 4096
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = true
+shadow_gradient_length = 0.3
+shadow_filter = 1
+shadow_filter_smooth = 17.0
