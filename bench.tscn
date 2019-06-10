@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/Sprite.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.80402, 15.6663 )
+extents = Vector2( 7.80402, 11.6609 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 closed = false
@@ -16,15 +16,10 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( 0, -15 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2( 4, -5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -1.83971, 8.9933 )
+position = Vector2( -1.83971, 6.10146 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

@@ -6,7 +6,6 @@ extends AnimatedSprite
 #	   3
 
 var facing = 1
-
 func is_idle():
 	if (Input.is_action_pressed("ui_right") ||Input.is_action_pressed("ui_left") ||Input.is_action_pressed("ui_up") ||Input.is_action_pressed("ui_down")):
 		return false
@@ -14,24 +13,7 @@ func is_idle():
 		return true
 
 func get_input():
-	if Input.is_action_pressed("ui_right"):
-		set_flip_h(false)
-		facing=1
-		play("walkhorizontal")
-		
-	elif Input.is_action_pressed("ui_left"):
-		set_flip_h(true)
-		facing=1
-		play("walkhorizontal")
 
-	elif (Input.is_action_pressed("ui_up") && !(Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right"))):
-			facing=2
-			play("walkup")
-
-	elif (Input.is_action_pressed("ui_down") && !(Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right"))):
-			facing=3
-			play("walkdown")
-	
 	if(is_idle()):
 		if (facing == 1):
 			if(Input.is_action_just_released("ui_right") || Input.is_action_just_released("ui_left")):
@@ -50,6 +32,25 @@ func get_input():
 				play("toidledown")
 			elif(frame == 2):
 				play("idledown")
+	elif (Input.is_action_pressed("ui_right") && !is_idle()):
+		set_flip_h(false)
+		facing=1
+		play("walkhorizontal")
+		
+	elif Input.is_action_pressed("ui_left") && !is_idle():
+		set_flip_h(true)
+		facing=1
+		play("walkhorizontal")
+
+	elif (Input.is_action_pressed("ui_up") && !(Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right")) && !is_idle()):
+			facing=2
+			play("walkup")
+
+	elif (Input.is_action_pressed("ui_down") && !(Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right")) && !is_idle()):
+			facing=3
+			play("walkdown")
+	
+	
 
 func _process(delta):
 	get_input()
