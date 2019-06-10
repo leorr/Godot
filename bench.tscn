@@ -1,20 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/props/bench.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Sprite.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.12846, 9.96474 )
+extents = Vector2( 7.80402, 15.6663 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+closed = false
+polygon = PoolVector2Array( -7.63035, -29.5405, -7.63035, -6.22196 )
 
 [node name="bench" type="Sprite"]
-modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
-position = Vector2( -45.3189, 14.4739 )
+modulate = Color( 0.572549, 0.572549, 0.572549, 1 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, 25 )
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 0, -15 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -2.83971, 19.9933 )
+position = Vector2( -1.83971, 8.9933 )
 shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )

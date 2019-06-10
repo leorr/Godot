@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/walkdown-1.png" type="Texture" id=2]
@@ -115,10 +115,6 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="OccluderPolygon2D" id=4]
-cull_mode = 1
-polygon = PoolVector2Array( -5.52757, 3.62405, -2.5267, -7.60998, -3.75782, -9.99529, -1.83419, -12.6884, 0.0125046, -13.227, 2.47476, -12.6884, 4.01367, -9.99529, 3.09032, -7.53304, 5.78341, 3.62405, 3.85978, 5.47074, 0.0383472, 5.8408, -3.06531, 5.54769 )
-
 [node name="Player_Body" type="KinematicBody2D"]
 modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
 z_as_relative = false
@@ -148,17 +144,10 @@ frame = 5
 playing = true
 script = ExtResource( 59 )
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
-show_behind_parent = true
-position = Vector2( -0.615566, 2 )
-scale = Vector2( 2, 2 )
-occluder = SubResource( 4 )
-
 [node name="fog" type="Light2D" parent="."]
 position = Vector2( 0, 9 )
 texture = ExtResource( 60 )
 offset = Vector2( 0, 17 )
-energy = 3.0
 mode = 3
 range_z_min = -4096
 range_z_max = 4096
@@ -169,14 +158,14 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, 11 )
+position = Vector2( 0, 14 )
 texture = ExtResource( 61 )
 texture_scale = 0.75
-color = Color( 0.619608, 1, 0.956863, 1 )
+color = Color( 0.498039, 0.803922, 0.611765, 1 )
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
 range_layer_max = 512
-shadow_gradient_length = 0.3
+shadow_gradient_length = 2.0
 shadow_filter = 1
 shadow_filter_smooth = 17.0
