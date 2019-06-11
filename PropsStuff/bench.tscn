@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/Sprite.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.80402, 11.6609 )
+extents = Vector2( 13.8397, 17.1015 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 closed = false
@@ -19,7 +19,7 @@ script = ExtResource( 2 )
 position = Vector2( 4, -5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -1.83971, 6.10146 )
+position = Vector2( 1.16029, 6.10146 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

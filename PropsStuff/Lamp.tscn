@@ -28,11 +28,10 @@ scale = Vector2( 0.8, 0.8 )
 z_index = -1
 z_as_relative = false
 texture = ExtResource( 1 )
-offset = Vector2( 0, -15 )
 script = ExtResource( 2 )
 
 [node name="Colider" type="StaticBody2D" parent="."]
-position = Vector2( 20, -12.5 )
+position = Vector2( 20, -6.25 )
 
 [node name="Colider_Shape" type="CollisionShape2D" parent="Colider"]
 position = Vector2( -19.7058, 23.8786 )
@@ -48,7 +47,7 @@ texture = SubResource( 2 )
 [node name="Reflection2" type="Sprite" parent="."]
 self_modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
 show_behind_parent = true
-position = Vector2( 0, -27.5 )
+position = Vector2( 0, -22.5 )
 scale = Vector2( 0.25, 0.25 )
 texture = SubResource( 2 )
 
