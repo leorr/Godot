@@ -285,7 +285,8 @@ anims/walkright = SubResource( 27 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Animation"]
 frames = ExtResource( 2 )
 animation = "idlehorizontal"
-speed_scale = 2.5
+frame = 3
+speed_scale = 2.8
 playing = true
 flip_h = true
 script = ExtResource( 3 )
@@ -307,9 +308,9 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 
 [node name="Light2D" type="Light2D" parent="Light"]
-position = Vector2( 0, 14 )
+position = Vector2( 0, 17.3333 )
 texture = ExtResource( 5 )
-texture_scale = 0.8
+texture_scale = 0.9
 color = Color( 0.498039, 0.803922, 0.611765, 1 )
 energy = 1.1
 range_z_min = -4096
