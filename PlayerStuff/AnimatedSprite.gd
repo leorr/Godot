@@ -49,6 +49,8 @@ func get_input():
 	elif (Input.is_action_pressed("ui_down") && !(Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_right")) && !is_idle()):
 			facing=3
 			play("walkdown")
+	if(Input.is_key_pressed(90)):
+		play("test")
 	
 	
 

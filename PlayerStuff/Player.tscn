@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/player_motion.gd" type="Script" id=1]
 [ext_resource path="res://PlayerStuff/SpriteFrames.tres" type="SpriteFrames" id=2]
@@ -8,242 +8,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.90028, 10.4226 )
-
-[sub_resource type="AnimationNodeAnimation" id=2]
-animation = "idleleft"
-
-[sub_resource type="AnimationNodeAnimation" id=3]
-animation = "idleright"
-
-[sub_resource type="AnimationNodeAnimation" id=4]
-animation = "toidleleft"
-
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "toidleright"
-
-[sub_resource type="AnimationNodeAnimation" id=6]
-animation = "walkleft"
-
-[sub_resource type="AnimationNodeAnimation" id=7]
-animation = "walkright"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=9]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id=20]
-states/idleleft/node = SubResource( 2 )
-states/idleleft/position = Vector2( -255, 43 )
-states/idleright/node = SubResource( 3 )
-states/idleright/position = Vector2( -728, 43 )
-states/toidleleft/node = SubResource( 4 )
-states/toidleleft/position = Vector2( -255, 149 )
-states/toidleright/node = SubResource( 5 )
-states/toidleright/position = Vector2( -728, 149 )
-states/walkleft/node = SubResource( 6 )
-states/walkleft/position = Vector2( -501, -63 )
-states/walkright/node = SubResource( 7 )
-states/walkright/position = Vector2( -501, 113 )
-transitions = [ "idleright", "walkright", SubResource( 8 ), "idleleft", "walkright", SubResource( 9 ), "walkright", "toidleleft", SubResource( 10 ), "toidleleft", "idleleft", SubResource( 11 ), "walkright", "toidleright", SubResource( 12 ), "toidleright", "idleright", SubResource( 13 ), "idleright", "walkleft", SubResource( 14 ), "idleleft", "walkleft", SubResource( 15 ), "walkleft", "toidleleft", SubResource( 16 ), "walkleft", "toidleright", SubResource( 17 ), "walkright", "walkleft", SubResource( 18 ), "walkleft", "walkright", SubResource( 19 ) ]
-graph_offset = Vector2( -884.301, -92 )
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
-
-[sub_resource type="Animation" id=22]
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "idlehorizontal" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=23]
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "idlehorizontal" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=24]
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "toidlehorizontal" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=25]
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "toidlehorizontal" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=26]
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "walkhorizontal" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=27]
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "walkhorizontal" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
 [node name="Player_Body" type="KinematicBody2D"]
 modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
@@ -268,25 +32,10 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="."]
 
-[node name="AnimationTree" type="AnimationTree" parent="Animation"]
-tree_root = SubResource( 20 )
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 21 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
-anims/idleleft = SubResource( 22 )
-anims/idleright = SubResource( 23 )
-anims/toidleleft = SubResource( 24 )
-anims/toidleright = SubResource( 25 )
-anims/walkleft = SubResource( 26 )
-anims/walkright = SubResource( 27 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Animation"]
 frames = ExtResource( 2 )
-animation = "idlehorizontal"
-frame = 3
-speed_scale = 2.8
+animation = "test"
+speed_scale = 3.0
 playing = true
 flip_h = true
 script = ExtResource( 3 )
@@ -308,11 +57,12 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 
 [node name="Light2D" type="Light2D" parent="Light"]
-position = Vector2( 0, 17.3333 )
+position = Vector2( 0, 27.3333 )
+z_index = -1
 texture = ExtResource( 5 )
 texture_scale = 0.9
 color = Color( 0.498039, 0.803922, 0.611765, 1 )
-energy = 1.1
+energy = 1.4
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512

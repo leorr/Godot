@@ -12,24 +12,13 @@ func get_input():
 	motion = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		motion.x += 1
-	if Input.is_action_just_pressed("ui_right"):
-		emit_signal("right")
-	
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		motion.x -= 1
-	if Input.is_action_just_pressed("ui_left"):
-		emit_signal("left")
-
 	if Input.is_action_pressed("ui_up"):
 		motion.y -= 1
-	if Input.is_action_just_pressed("ui_up"):
-		emit_signal("up")
-
-	if Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		motion.y += 1
-	if Input.is_action_just_pressed("ui_down"):
-		emit_signal("down")
-	
+
 	motion= motion.normalized() * speed
 
 func _physics_process(delta):
