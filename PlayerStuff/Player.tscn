@@ -47,6 +47,7 @@ scale = Vector2( 1.2, 1.2 )
 position = Vector2( 0, 9 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, 17 )
+texture_scale = 2.03
 mode = 3
 range_z_min = -4096
 range_z_max = 4096
@@ -57,12 +58,13 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 
 [node name="Light2D" type="Light2D" parent="Light"]
-position = Vector2( 0, 27.3333 )
+position = Vector2( 0, 24 )
 z_index = -1
 texture = ExtResource( 5 )
 texture_scale = 0.9
 color = Color( 0.498039, 0.803922, 0.611765, 1 )
-energy = 1.4
+energy = 1.1
+mode = 2
 range_z_min = -4096
 range_z_max = 4096
 range_layer_min = -512
