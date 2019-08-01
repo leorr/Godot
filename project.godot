@@ -8,16 +8,22 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://scripts/State_Machine.gd"
+} ]
 _global_script_class_icons={
-
+"StateMachine": ""
 }
 
 [application]
 
 config/name="dopegame"
+run/main_scene="res://scenes/Player.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://stupidicon.png"
+config/icon="res://assets/icon.png"
 
 [debug]
 
