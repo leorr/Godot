@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/lights/light-export.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.49521, 10 )
+extents = Vector2( 4.49521, 5.96098 )
 
 [node name="Lamp" type="Sprite"]
 position = Vector2( 24.5177, 76.0681 )

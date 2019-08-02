@@ -1,7 +1,6 @@
 extends "res://scripts/State_Machine.gd"
 
 var facing = 0 
-var z = 0
 
 func _ready():
 	add_state("idle")
@@ -15,8 +14,6 @@ func _ready():
 func _state_logic(delta):
 	parent._handle_move_input()
 	parent.set_z_index(parent.get_position().y)
-	z= parent.get_z_index()
-	print("Player Z:", z)
 	parent._apply_movement()
 
 func _get_transition(delta):#transition is to return
