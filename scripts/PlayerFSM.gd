@@ -5,11 +5,16 @@ var facing = 0
 func _ready():
 	add_state("idle")
 	add_state("walking")
+	#todo
+	#in nether state
+	#in reality
+	#being pulled back where this one cancells the rest
 	call_deferred("set_state",states.idle)
 
 func _state_logic(delta):
 	parent._handle_move_input()
 	parent._apply_movement()
+	print(facing)
 
 func _get_transition(delta):#transition is to return
 	match state:
@@ -23,41 +28,40 @@ func _get_transition(delta):#transition is to return
 				return states.idle
 			else:
 				if parent.motion.x !=0:
-					if parent.motion.x >0:
+					if parent.motion.x > 0:
 						facing = 1
 					else:
 						facing = 3
 				else:
 					if parent.motion.y > 0:
-						facing = 0
+						facing=0
 					else:
-						facing = 2
-				return states.walking
+						facing=2
+			return states.walking
 
 func _enter_state(new_state,old_state):
 	match new_state:
 		states.idle:
 			match facing:
 				0:
-					parent.get_node("anim_player").play("idledown")
+					parent.get_node("anim_player").play("IdleD")
 				1:
-					parent.get_node("anim_player").play("idlehorizontal")
-				3:
-					parent.get_node("anim_player").play("idlehorizontal")
+					parent.get_node("anim_player").play("IdleH")
 				2:
-					parent.get_node("anim_player").play("idleup")
-
+					parent.get_node("anim_player").play("IdleU")
+				3:
+					parent.get_node("anim_player").play("IdleH")
 
 		states.walking:
 			match facing:
 				0:
-					parent.get_node("anim_player").play("walkdown")
+					parent.get_node("anim_player").play("WalkD")
 				1:
 					parent.get_node("anim_player").set_flip_h(false)
-					parent.get_node("anim_player").play("walkhorizontal")
+					parent.get_node("anim_player").play("WalkH")
+				2:
+					parent.get_node("anim_player").play("WalkU")
 				3:
 					parent.get_node("anim_player").set_flip_h(true)
-					parent.get_node("anim_player").play("walkhorizontal")
-				2:
-					parent.get_node("anim_player").play("walkup")
+					parent.get_node("anim_player").play("WalkH")
 
