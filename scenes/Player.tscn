@@ -1,23 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://PlayerAnimations.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://scripts/PlayerFSM.gd" type="Script" id=3]
+[ext_resource path="res://assets/lights/fog-export.png" type="Texture" id=4]
+[ext_resource path="res://assets/lights/lightfading-export.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 13.0261 )
 
 [node name="Player" type="KinematicBody2D"]
-scale = Vector2( 0.45, 0.45 )
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="anim_player" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "IdleD"
-frame = 2
+frame = 3
 speed_scale = 2.0
 playing = true
 
@@ -32,3 +31,27 @@ script = ExtResource( 3 )
 current = true
 zoom = Vector2( 0.22, 0.22 )
 limit_smoothed = true
+
+[node name="fog" type="Light2D" parent="."]
+position = Vector2( 0, 9 )
+scale = Vector2( 1, 2.41854 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 17 )
+texture_scale = 2.03
+mode = 3
+range_z_min = -4096
+range_z_max = 4096
+range_layer_min = -512
+range_layer_max = 512
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 0, 11.4478 )
+scale = Vector2( 1, 1.11375 )
+texture = ExtResource( 5 )
+texture_scale = 1.2
+color = Color( 0.14902, 1, 0.501961, 0.345098 )
+mode = 2
+range_z_min = -4096
+range_z_max = 4096
+range_layer_min = -512
+range_layer_max = 512
