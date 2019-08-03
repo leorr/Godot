@@ -5,10 +5,6 @@ var facing = 0
 func _ready():
 	add_state("idle")
 	add_state("walking")
-	#todo
-	#in nether state
-	#in reality
-	#being pulled back where this one cancells the rest
 	call_deferred("set_state",states.idle)
 
 func _state_logic(delta):
@@ -16,7 +12,7 @@ func _state_logic(delta):
 	parent.set_z_index(parent.get_position().y)
 	parent._apply_movement()
 
-func _get_transition(delta):#transition is to return
+func _get_transition(delta):
 	match state:
 		states.idle:
 			if parent.motion.x == 0 && parent.motion.y ==0 :
@@ -64,4 +60,3 @@ func _enter_state(new_state,old_state):
 				3:
 					parent.get_node("anim_player").set_flip_h(true)
 					parent.get_node("anim_player").play("WalkH")
-
