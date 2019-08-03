@@ -10,7 +10,6 @@ func _ready():
 
 
 func _on_Player_nether():
-	
 	lights.set_visible(false)
 
 func _on_Player_reality():

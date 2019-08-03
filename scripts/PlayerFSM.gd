@@ -5,6 +5,7 @@ var facing = 0
 func _ready():
 	add_state("idle")
 	add_state("walking")
+	add_state("pulled")
 	call_deferred("set_state",states.idle)
 
 func _state_logic(delta):
@@ -33,7 +34,7 @@ func _get_transition(delta):
 						facing=0
 					else:
 						facing=2
-			return states.walking
+				return states.walking
 
 func _enter_state(new_state,old_state):
 	match new_state:
