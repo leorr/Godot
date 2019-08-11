@@ -21,7 +21,7 @@ position = Vector2( 36.3757, -48.273 )
 
 [node name="Bench" parent="." instance=ExtResource( 4 )]
 position = Vector2( -61.8424, -90.8959 )
-[connection signal="nether" from="Player" to="Lamp2" method="_on_Player_nether"]
 [connection signal="nether" from="Player" to="Lamp3" method="_on_Player_nether"]
-[connection signal="reality" from="Player" to="Lamp2" method="_on_Player_reality"]
+[connection signal="nether" from="Player" to="Lamp2" method="_on_Player_nether"]
 [connection signal="reality" from="Player" to="Lamp3" method="_on_Player_reality"]
+[connection signal="reality" from="Player" to="Lamp2" method="_on_Player_reality"]
