@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var motion = Vector2()
+var pmotion = Vector2()
 var speed = 115
 
 signal nether
@@ -8,6 +9,9 @@ signal reality
 
 func _apply_movement():
 	move_and_slide(motion)
+
+func _dodge():
+	motion = pmotion * 2
 
 func _handle_move_input():
 	motion = Vector2()
@@ -20,6 +24,7 @@ func _handle_move_input():
 	if Input.is_action_pressed("ui_down"):
 		motion.y += 1
 	motion= motion.normalized() * speed
+	pmotion = motion
 
 func _on_StateMachine_nether():
 	emit_signal("nether")

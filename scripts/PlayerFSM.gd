@@ -5,23 +5,30 @@ var facing = 0
 func _ready():
 	add_state("idle")
 	add_state("walking")
-	add_state("pulled")
+	add_state("dodge")
 	call_deferred("set_state",states.idle)
 
 func _state_logic(delta):
-	parent._handle_move_input()
 	parent.set_z_index(parent.get_position().y)
 	parent._apply_movement()
 
 func _get_transition(delta):
 	match state:
 		states.idle:
+			if Input.is_action_just_pressed("action"):
+				return states.dodge
+
+			parent._handle_move_input()
 			if parent.motion.x == 0 && parent.motion.y ==0 :
 				return states.idle
 			else:
 				return states.walking
 		states.walking:
+			if Input.is_action_just_pressed("action"):
+				return states.dodge
+
 			if parent.motion.x == 0 && parent.motion.y ==0 :
+				parent._handle_move_input()
 				return states.idle
 			else:
 				if parent.motion.x !=0:
@@ -34,7 +41,11 @@ func _get_transition(delta):
 						facing=0
 					else:
 						facing=2
+				parent._handle_move_input()
 				return states.walking
+		states.dodge:
+			parent._dodge()
+			return states.dodge
 
 func _enter_state(new_state,old_state):
 	match new_state:

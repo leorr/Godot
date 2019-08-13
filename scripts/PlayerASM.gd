@@ -11,12 +11,12 @@ func _ready():
 func _get_transition(delta):#transition is to return
 	match state:
 		states.nether:
-			if  Input.is_action_pressed("action"):
+			if Input.is_action_pressed("action"):
 				return states.nether
 			else:
 				return states.reality
 		states.reality:
-			if  Input.is_action_pressed("action"):
+			if Input.is_action_pressed("action"):
 				return states.nether
 			else:
 				return states.reality
