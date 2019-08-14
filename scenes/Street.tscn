@@ -7,6 +7,7 @@ extents = Vector2( 28.0165, 71.0519 )
 
 [node name="street-1" type="Sprite"]
 editor/display_folded = true
+modulate = Color( 0.188235, 0.188235, 0.188235, 1 )
 position = Vector2( -25.4589, 47.9051 )
 z_index = -4096
 z_as_relative = false

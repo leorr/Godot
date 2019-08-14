@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Bench.tscn" type="PackedScene" id=4]
 
 [node name="BaseLevel" type="Node2D"]
+modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
 
 [node name="street-1" parent="." instance=ExtResource( 1 )]
 position = Vector2( -17.8455, -34.3591 )
@@ -39,15 +40,15 @@ position = Vector2( 36.3757, -48.273 )
 
 [node name="Bench" parent="." instance=ExtResource( 4 )]
 position = Vector2( -61.8424, -90.8959 )
-[connection signal="nether" from="Player" to="Lamp6" method="_on_Player_nether"]
-[connection signal="nether" from="Player" to="Lamp7" method="_on_Player_nether"]
 [connection signal="nether" from="Player" to="Lamp3" method="_on_Player_nether"]
-[connection signal="nether" from="Player" to="Lamp4" method="_on_Player_nether"]
-[connection signal="nether" from="Player" to="Lamp2" method="_on_Player_nether"]
 [connection signal="nether" from="Player" to="Lamp5" method="_on_Player_nether"]
-[connection signal="reality" from="Player" to="Lamp6" method="_on_Player_reality"]
-[connection signal="reality" from="Player" to="Lamp7" method="_on_Player_reality"]
+[connection signal="nether" from="Player" to="Lamp6" method="_on_Player_nether"]
+[connection signal="nether" from="Player" to="Lamp2" method="_on_Player_nether"]
+[connection signal="nether" from="Player" to="Lamp4" method="_on_Player_nether"]
+[connection signal="nether" from="Player" to="Lamp7" method="_on_Player_nether"]
 [connection signal="reality" from="Player" to="Lamp3" method="_on_Player_reality"]
-[connection signal="reality" from="Player" to="Lamp4" method="_on_Player_reality"]
-[connection signal="reality" from="Player" to="Lamp2" method="_on_Player_reality"]
 [connection signal="reality" from="Player" to="Lamp5" method="_on_Player_reality"]
+[connection signal="reality" from="Player" to="Lamp6" method="_on_Player_reality"]
+[connection signal="reality" from="Player" to="Lamp2" method="_on_Player_reality"]
+[connection signal="reality" from="Player" to="Lamp4" method="_on_Player_reality"]
+[connection signal="reality" from="Player" to="Lamp7" method="_on_Player_reality"]

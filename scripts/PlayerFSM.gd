@@ -19,11 +19,11 @@ func _get_transition(delta):
 	match state:
 		states.idle:
 			parent._handle_move_input()
-			if parent.motion.x == 0 && parent.motion.y ==0 :
-				return states.idle
-			else:
+			if parent.motion.x != 0 || parent.motion.y !=0 :
 				return states.walking
+
 		states.walking:
+			parent._handle_move_input()
 			if Input.is_action_just_pressed("action"):
 				return states.dodge
 			if parent.motion.x == 0 && parent.motion.y ==0 :
@@ -40,11 +40,11 @@ func _get_transition(delta):
 						facing=0
 					else:
 						facing=2
-				parent._handle_move_input()
 				return states.walking
+
 		states.dodge:
 			emit_signal("nether")
-			parent.get_node("light").set_energy(float(1))
+			parent.get_node("light").set_energy(float(3))
 			parent._dodge()
 			yield(timer,"timeout")#setting the state outside
 
