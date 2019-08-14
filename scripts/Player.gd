@@ -4,6 +4,7 @@ var motion = Vector2()
 var pmotion = Vector2()
 
 onready var timer = get_node("StateMachine").get_node("Timer")
+onready var colider = get_node("CollisionShape2D")
 
 var speed = 115
 
@@ -15,7 +16,7 @@ func _apply_movement():
 	move_and_slide(motion)
 
 func _dodge():
-	motion = motion * 4
+	motion = motion * 2
 	timer.start()
 
 	
@@ -33,7 +34,9 @@ func _handle_move_input():
 	pmotion = motion
 
 func _on_StateMachine_nether():
+	colider.set_disabled(true)
 	emit_signal("nether")
 
-func _on_StateMachine2_reality():
+func _on_StateMachine_reality():
+	colider.set_disabled(false)
 	emit_signal("reality")

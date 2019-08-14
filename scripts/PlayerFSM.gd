@@ -2,6 +2,8 @@ extends "res://scripts/State_Machine.gd"
 
 var facing = 0 
 onready var timer = get_node("Timer")
+signal nether
+signal reality
 
 func _ready():
 	add_state("idle")
@@ -41,6 +43,8 @@ func _get_transition(delta):
 				parent._handle_move_input()
 				return states.walking
 		states.dodge:
+			emit_signal("nether")
+			parent.get_node("light").set_energy(float(1))
 			parent._dodge()
 			yield(timer,"timeout")#setting the state outside
 
@@ -73,3 +77,5 @@ func _enter_state(new_state,old_state):
 
 func _on_Timer_timeout():
 	set_state(states.walking)
+	parent.get_node("light").set_energy(float(0.1))
+	emit_signal("reality")
