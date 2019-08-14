@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var lights = ["res://scenes/Lamp.tscn"]
 var motion = Vector2()
 var pmotion = Vector2()
 
@@ -8,15 +9,21 @@ onready var colider = get_node("CollisionShape2D")
 
 var speed = 115
 
-
 signal nether
 signal reality
+
+#func _ready():
+	#var num = 0
+	#var currentlight = load(lights[num]).instance()
+	#connect("reality",currentlight,"_on_Player_reality")
+	#connect("nether",currentlight,"_on_Player_nether")
+	
 
 func _apply_movement():
 	move_and_slide(motion)
 
 func _dodge():
-	motion = motion * 2
+	motion = motion * 3
 	timer.start()
 
 	

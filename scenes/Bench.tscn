@@ -7,7 +7,7 @@
 extents = Vector2( 7.35263, 17.7943 )
 
 [node name="Bench" type="Sprite"]
-self_modulate = Color( 0.494118, 0.494118, 0.494118, 1 )
+self_modulate = Color( 0.313726, 0.313726, 0.313726, 1 )
 position = Vector2( -79.0762, 34.3731 )
 z_as_relative = false
 texture = ExtResource( 1 )

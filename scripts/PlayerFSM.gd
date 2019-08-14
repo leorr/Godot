@@ -44,7 +44,7 @@ func _get_transition(delta):
 
 		states.dodge:
 			emit_signal("nether")
-			parent.get_node("light").set_energy(float(3))
+			parent.get_node("light").set_energy(float(5))
 			parent._dodge()
 			yield(timer,"timeout")#setting the state outside
 
