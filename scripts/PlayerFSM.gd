@@ -1,6 +1,7 @@
 extends "res://scripts/State_Machine.gd"
 
 var facing = 0 
+onready var timer = get_node("Timer")
 
 func _ready():
 	add_state("idle")
@@ -17,7 +18,6 @@ func _get_transition(delta):
 		states.idle:
 			if Input.is_action_just_pressed("action"):
 				return states.dodge
-
 			parent._handle_move_input()
 			if parent.motion.x == 0 && parent.motion.y ==0 :
 				return states.idle
@@ -26,7 +26,6 @@ func _get_transition(delta):
 		states.walking:
 			if Input.is_action_just_pressed("action"):
 				return states.dodge
-
 			if parent.motion.x == 0 && parent.motion.y ==0 :
 				parent._handle_move_input()
 				return states.idle
@@ -45,7 +44,9 @@ func _get_transition(delta):
 				return states.walking
 		states.dodge:
 			parent._dodge()
-			return states.dodge
+			yield(timer,"timeout")
+			print("done")
+			return states.walking
 
 func _enter_state(new_state,old_state):
 	match new_state:
@@ -72,3 +73,7 @@ func _enter_state(new_state,old_state):
 				3:
 					parent.get_node("anim_player").set_flip_h(true)
 					parent.get_node("anim_player").play("WalkH")
+
+
+func _on_Timer_timeout():
+	set_state(states.walking)

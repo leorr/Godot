@@ -2,7 +2,11 @@ extends KinematicBody2D
 
 var motion = Vector2()
 var pmotion = Vector2()
+
+onready var timer = get_node("StateMachine").get_node("Timer")
+
 var speed = 115
+
 
 signal nether
 signal reality
@@ -11,8 +15,10 @@ func _apply_movement():
 	move_and_slide(motion)
 
 func _dodge():
-	motion = pmotion * 2
+	motion = motion * 4
+	timer.start()
 
+	
 func _handle_move_input():
 	motion = Vector2()
 	if Input.is_action_pressed("ui_right"):
