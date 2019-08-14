@@ -16,8 +16,6 @@ func _state_logic(delta):
 func _get_transition(delta):
 	match state:
 		states.idle:
-			if Input.is_action_just_pressed("action"):
-				return states.dodge
 			parent._handle_move_input()
 			if parent.motion.x == 0 && parent.motion.y ==0 :
 				return states.idle
@@ -44,9 +42,7 @@ func _get_transition(delta):
 				return states.walking
 		states.dodge:
 			parent._dodge()
-			yield(timer,"timeout")
-			print("done")
-			return states.walking
+			yield(timer,"timeout")#setting the state outside
 
 func _enter_state(new_state,old_state):
 	match new_state:
