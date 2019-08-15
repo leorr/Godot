@@ -1,21 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/props/bench.png" type="Texture" id=1]
 [ext_resource path="res://scripts/FixedProps.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.35263, 17.7943 )
-
 [node name="Bench" type="Sprite"]
-self_modulate = Color( 0.313726, 0.313726, 0.313726, 1 )
+self_modulate = Color( 0.356863, 0.356863, 0.356863, 1 )
 position = Vector2( -79.0762, 34.3731 )
 z_as_relative = false
 texture = ExtResource( 1 )
-offset = Vector2( 0, 10 )
+offset = Vector2( 0, 5 )
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 2, 11 )
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0, -4 )
+polygon = PoolVector2Array( -6.17346, -11.4896, -4.36885, -5.28526, -1.92683, 3.11055, -5.91644, 18.4537, 1.40876, 23.7066, 12.2038, 23.9636, 12.2393, 0.10561, 4.08305, -2.04078, -1.67554, -11.1041 )

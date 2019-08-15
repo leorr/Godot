@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/Lamp.tscn" type="PackedScene" id=4]
 
 [node name="BaseLevel" type="Node2D"]
-modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+modulate = Color( 0.341176, 0.341176, 0.341176, 1 )
 
 [node name="street-1" parent="." instance=ExtResource( 1 )]
 position = Vector2( -17.8455, -34.3591 )
