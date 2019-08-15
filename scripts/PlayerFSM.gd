@@ -11,11 +11,11 @@ func _ready():
 	add_state("dodge")
 	call_deferred("set_state",states.idle)
 
-func _state_logic(delta):
+func _refresh(delta):
 	parent.set_z_index(parent.get_position().y)
 	parent._apply_movement()
 
-func _get_transition(delta):
+func _update_state(delta):
 	match state:
 		states.idle:
 			parent._handle_move_input()

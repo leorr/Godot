@@ -10,15 +10,15 @@ onready var parent = get_parent()
 
 func _process(delta):
 	if state != null:
-		_state_logic(delta)
-		var transition = _get_transition(delta)
+		_refresh(delta)
+		var transition = _update_state(delta)
 		if transition != null:
 			set_state(transition)
 
-func _state_logic(delta):
+func _refresh(delta):
 	pass
 
-func _get_transition(delta):
+func _update_state(delta):
 	return null
 
 func _enter_state(new_state,old_state):
