@@ -26,7 +26,7 @@ scale = Vector2( 1.5, 1 )
 texture = ExtResource( 3 )
 texture_scale = 1.5
 color = Color( 0.788235, 0.254902, 0.0470588, 1 )
-energy = 4.0
+energy = 5.0
 range_height = -100.0
 
 [node name="lamplight" type="Sprite" parent="lights"]

@@ -15,6 +15,7 @@ script = ExtResource( 1 )
 self_modulate = Color( 0.141176, 0.141176, 0.141176, 1 )
 frames = ExtResource( 2 )
 animation = "IdleD"
+frame = 2
 speed_scale = 2.0
 playing = true
 
@@ -27,12 +28,12 @@ script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="StateMachine"]
 process_mode = 0
-wait_time = 0.25
+wait_time = 0.3
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.22, 0.22 )
 limit_smoothed = true
-[connection signal="timeout" from="StateMachine/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="StateMachine/Timer" to="StateMachine" method="_on_Timer_timeout"]
+[connection signal="timeout" from="StateMachine/Timer" to="." method="_on_Timer_timeout"]

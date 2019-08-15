@@ -69,6 +69,8 @@ func _enter_state(new_state,old_state):
 				3:
 					parent.get_node("anim_player").set_flip_h(true)
 					parent.get_node("anim_player").play("WalkH")
+		states.dodge:
+			parent.get_node("anim_player").play("DodgeH")
 
 
 func _on_Timer_timeout():

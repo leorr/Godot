@@ -20,7 +20,7 @@ func _apply_movement():
 	move_and_slide(motion)
 
 func _dodge():
-	motion = motion * 3
+	motion = motion * 2
 	timer.start()
 
 	
