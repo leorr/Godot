@@ -9,9 +9,6 @@ onready var colider = get_node("CollisionShape2D")
 
 var speed = 115
 
-signal nether
-signal reality
-
 #func _ready():
 	#var num = 0
 	#var currentlight = load(lights[num]).instance()
@@ -39,11 +36,3 @@ func _handle_move_input():
 		motion.y += 1
 	motion= motion.normalized() * speed
 	pmotion = motion
-
-func _on_StateMachine_nether():
-	colider.set_disabled(true)
-	emit_signal("nether")
-
-func _on_StateMachine_reality():
-	colider.set_disabled(false)
-	emit_signal("reality")

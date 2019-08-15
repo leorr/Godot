@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://PlayerAnimations.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://scripts/PlayerFSM.gd" type="Script" id=3]
-[ext_resource path="res://assets/lights/lightfading-export.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 13.0261 )
@@ -35,14 +34,5 @@ one_shot = true
 current = true
 zoom = Vector2( 0.22, 0.22 )
 limit_smoothed = true
-
-[node name="light" type="Light2D" parent="."]
-position = Vector2( 0, 11.4478 )
-scale = Vector2( 1, 1.11375 )
-texture = ExtResource( 4 )
-color = Color( 0, 1, 0.415686, 0.345098 )
-energy = 0.05
-[connection signal="nether" from="StateMachine" to="." method="_on_StateMachine_nether"]
-[connection signal="reality" from="StateMachine" to="." method="_on_StateMachine_reality"]
-[connection signal="timeout" from="StateMachine/Timer" to="StateMachine" method="_on_Timer_timeout"]
 [connection signal="timeout" from="StateMachine/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="StateMachine/Timer" to="StateMachine" method="_on_Timer_timeout"]
