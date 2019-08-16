@@ -31,13 +31,12 @@ range_height = -100.0
 
 [node name="lamplight" type="Sprite" parent="lights"]
 self_modulate = Color( 1, 0.521569, 0.231373, 0.588235 )
-show_behind_parent = true
 position = Vector2( -0.0578311, -27.1851 )
 scale = Vector2( 0.165953, 0.112761 )
 texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.556863, 0.392157, 0.270588, 0.0196078 )
+self_modulate = Color( 0.572549, 0.243137, 0, 0.0196078 )
 show_behind_parent = true
 position = Vector2( 0, 22 )
 scale = Vector2( 1, 0.5 )

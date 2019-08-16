@@ -24,22 +24,14 @@ position = Vector2( 36.3757, -48.273 )
 [node name="Bench" parent="." instance=ExtResource( 3 )]
 position = Vector2( -85.8424, -90.8959 )
 
-[node name="Lamp" parent="." groups=[
-"Lamps",
-] instance=ExtResource( 4 )]
+[node name="Lamp" parent="." instance=ExtResource( 4 )]
 position = Vector2( 40.188, -99.1827 )
 
-[node name="Lamp2" parent="." groups=[
-"Lamps",
-] instance=ExtResource( 4 )]
+[node name="Lamp2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -62.4678, -102.674 )
 
-[node name="Lamp3" parent="." groups=[
-"Lamps",
-] instance=ExtResource( 4 )]
+[node name="Lamp3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 27.6179, 75.4019 )
 
-[node name="Lamp4" parent="." groups=[
-"Lamps",
-] instance=ExtResource( 4 )]
+[node name="Lamp4" parent="." instance=ExtResource( 4 )]
 position = Vector2( -70.8479, 158.504 )
