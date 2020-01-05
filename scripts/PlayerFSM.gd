@@ -47,6 +47,7 @@ func _update_state(delta):
 func _enter_state(new_state,old_state):
 	match new_state:
 		states.idle:
+			parent.get_node("audio_player").stop()
 			match facing:
 				0:
 					parent.get_node("anim_player").play("IdleD")
@@ -58,6 +59,8 @@ func _enter_state(new_state,old_state):
 					parent.get_node("anim_player").play("IdleH")
 
 		states.walking:
+			if (!parent.get_node("audio_player").is_playing()):
+				parent.get_node("audio_player").play()
 			match facing:
 				0:
 					parent.get_node("anim_player").play("WalkD")
