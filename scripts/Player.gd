@@ -7,7 +7,7 @@ var pmotion = Vector2()
 onready var timer = get_node("StateMachine").get_node("Timer")
 onready var colider = get_node("CollisionShape2D")
 
-var speed = 115
+var speed = 100
 
 #func _ready():
 	#var num = 0

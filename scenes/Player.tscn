@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 self_modulate = Color( 0.141176, 0.141176, 0.141176, 1 )
 frames = ExtResource( 2 )
 animation = "DodgeD"
-frame = 4
+frame = 9
 speed_scale = 2.0
 playing = true
 
@@ -29,7 +29,7 @@ script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="StateMachine"]
 process_mode = 0
-wait_time = 0.3
+wait_time = 0.333
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

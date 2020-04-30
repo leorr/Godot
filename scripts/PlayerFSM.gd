@@ -80,7 +80,7 @@ func _enter_state(new_state,old_state):
 					parent.get_node("anim_player").set_flip_h(false)
 					parent.get_node("anim_player").play("DodgeH")
 				2:
-					parent.get_node("anim_player").play("DodgeH")
+					parent.get_node("anim_player").play("DodgeU")
 				3:
 					parent.get_node("anim_player").set_flip_h(true)
 					parent.get_node("anim_player").play("DodgeH")
