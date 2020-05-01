@@ -6,24 +6,24 @@
 [ext_resource path="res://assets/lights/lightfading-export.png" type="Texture" id=4]
 
 [node name="Lamp" type="Sprite"]
-position = Vector2( 24.5177, 76.0681 )
 z_as_relative = false
 texture = ExtResource( 1 )
-offset = Vector2( 0, -5 )
+offset = Vector2( 0, -15 )
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 0.749451 )
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( 0, 11 )
-polygon = PoolVector2Array( 2.31587, -7.04737, 2.31587, 9.89024, -1.43139, 9.89024, -1.58128, -7.04737 )
+position = Vector2( 0, 0.230835 )
+polygon = PoolVector2Array( 2.01115, 0.718794, 2.03943, 9.91077, -1.96747, 9.96884, -2.14388, 0.718794 )
 
 [node name="lights" type="Node2D" parent="."]
+position = Vector2( 0, -37 )
 
 [node name="Light2D" type="Light2D" parent="lights"]
-position = Vector2( 0, 19 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 0, 48 )
 texture = ExtResource( 3 )
 texture_scale = 1.5
 color = Color( 0.819608, 0.172549, 0, 1 )
@@ -31,14 +31,13 @@ energy = 5.0
 range_height = -100.0
 
 [node name="lamplight" type="Sprite" parent="lights"]
-self_modulate = Color( 1, 0.521569, 0.231373, 0.588235 )
-position = Vector2( -0.0578311, -27.1851 )
+self_modulate = Color( 0.243137, 0.0901961, 0, 0.588235 )
 scale = Vector2( 0.165953, 0.112761 )
 texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.572549, 0.243137, 0, 0.0196078 )
+self_modulate = Color( 0.572549, 0.243137, 0, 0.00784314 )
 show_behind_parent = true
-position = Vector2( 0, 22 )
+position = Vector2( 0, 11 )
 scale = Vector2( 1, 0.5 )
 texture = ExtResource( 4 )

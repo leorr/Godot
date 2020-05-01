@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/Lamp.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.29894, 8.46775 )
+extents = Vector2( 8.90644, 5.43872 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -7.92658, 7.21049, -7.82191, -1.89616, 7.5652, -1.68681, 7.66988, 7.41984 )
@@ -38,6 +38,7 @@ position = Vector2( -63.0643, 94 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( -72.0451, 22.831 )
+z_as_relative = false
 mode = 2
 mass = 4.0
 gravity_scale = 0.0
@@ -45,6 +46,7 @@ linear_damp = 31.581
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 0, 3 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]

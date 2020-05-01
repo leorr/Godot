@@ -51,16 +51,6 @@ func _update_state(delta):
 				parent._handle_move_input()
 				return states.idle
 			else:
-				if parent.motion.x !=0:
-					if parent.motion.x > 0:
-						facing = 1
-					else:
-						facing = 3
-				else:
-					if parent.motion.y > 0:
-						facing=0
-					else:
-						facing=2
 				return states.pushing
 
 func _enter_state(new_state,old_state):

@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/383660__deleted-user-7146007__footsteps-walking.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.22096
+radius = 5.95347
 height = 1.19539
 
 [node name="Player" type="RigidBody2D"]
@@ -19,12 +19,12 @@ self_modulate = Color( 0.141176, 0.141176, 0.141176, 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 2 )
 animation = "PushingH"
-frame = 10
+frame = 2
 speed_scale = 2.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0555992, 9.59546 )
+position = Vector2( -0.0555992, 8.59546 )
 shape = SubResource( 1 )
 
 [node name="StateMachine" type="Node" parent="."]
