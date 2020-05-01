@@ -15,16 +15,16 @@ func _process(delta):
 		if transition != null:
 			set_state(transition)
 
-func _refresh(delta):
+func _refresh(_delta):
 	pass
 
-func _update_state(delta):
+func _update_state(_delta):
 	return null
 
-func _enter_state(new_state,old_state):
+func _enter_state(_new_state,_old_state):
 	pass
 
-func _exit_state(old_state,new_state):
+func _exit_state(_old_state,_new_state):
 	pass
 
 func set_state(new_state):

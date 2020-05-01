@@ -11,6 +11,7 @@ func _ready():
 	set_contact_monitor(true)
 	set_max_contacts_reported(1)
 
+		
 func _apply_movement():
 	set_linear_velocity(motion)
 

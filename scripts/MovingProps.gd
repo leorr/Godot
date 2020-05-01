@@ -1,3 +1,3 @@
 extends Node2D
-func _process(delta):
-	set_z_index(get_position().y)
+func _process(_delta):
+	set_z_index(float(get_position().y))
