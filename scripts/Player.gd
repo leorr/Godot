@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 var lights = ["res://scenes/Lamp.tscn"]
 var motion = Vector2()
@@ -9,7 +9,9 @@ onready var colider = get_node("CollisionShape2D")
 
 var speed = 100
 
-#func _ready():
+func _ready():
+	set_contact_monitor(true)
+	set_max_contacts_reported(1)
 	#var num = 0
 	#var currentlight = load(lights[num]).instance()
 	#connect("reality",currentlight,"_on_Player_reality")
@@ -17,7 +19,7 @@ var speed = 100
 	
 
 func _apply_movement():
-	move_and_slide(motion)
+	set_linear_velocity(motion)
 
 func _dodge():
 	motion = motion * 2.5

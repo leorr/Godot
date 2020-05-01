@@ -13,10 +13,11 @@ offset = Vector2( 0, -5 )
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 0, 11 )
-polygon = PoolVector2Array( -0.271767, -3.71425, 7.06885, 2.19902, -0.271744, 7.70451, -7.40848, 1.99512 )
+polygon = PoolVector2Array( 2.31587, -7.04737, 2.31587, 9.89024, -1.43139, 9.89024, -1.58128, -7.04737 )
 
 [node name="lights" type="Node2D" parent="."]
 
@@ -25,7 +26,7 @@ position = Vector2( 0, 19 )
 scale = Vector2( 1.5, 1 )
 texture = ExtResource( 3 )
 texture_scale = 1.5
-color = Color( 0.788235, 0.254902, 0.0470588, 1 )
+color = Color( 0.819608, 0.172549, 0, 1 )
 energy = 5.0
 range_height = -100.0
 
