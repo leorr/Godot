@@ -29,6 +29,8 @@ func _update_state(_delta):
 		states.walking:
 			parent._handle_move_input()
 			if parent.get_colliding_bodies() != [] && (parent.motion.x == 0 || parent.motion.y==0):
+				audio.set_pitch_scale(2)
+				audio.stop()
 				return states.pushing
 			if Input.is_action_just_pressed("action"):
 				return states.dodge
@@ -76,6 +78,7 @@ func _enter_state(new_state,_old_state):
 		states.walking:
 			parent.set_mass(0.0000001)
 			parent.set_physics_material_override(f0)
+			audio.set_pitch_scale(1.4)
 			if (!audio.is_playing()):
 				audio.play()
 			match facing:
@@ -112,10 +115,11 @@ func _enter_state(new_state,_old_state):
 					facing = 2
 				
 			if (!audio.is_playing()):
+				audio.set_pitch_scale(1)
 				audio.play()
 			match facing:
 				0:
-					animator.play("WalkD")
+					animator.play("PushingD")
 				1:
 					animator.set_flip_h(false)
 					animator.play("PushingH")
