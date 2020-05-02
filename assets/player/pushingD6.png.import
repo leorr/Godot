@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dopegame.png-7341fd7cab38a7a600b6dfdd2f1a6bab.stex"
+path="res://.import/pushingD6.png-bdeddee41aacbf1e514ad92757e84d1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dopegame.png"
-dest_files=[ "res://.import/dopegame.png-7341fd7cab38a7a600b6dfdd2f1a6bab.stex" ]
+source_file="res://assets/player/pushingD6.png"
+dest_files=[ "res://.import/pushingD6.png-bdeddee41aacbf1e514ad92757e84d1c.stex" ]
 
 [params]
 

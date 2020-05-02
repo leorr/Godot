@@ -1,10 +1,11 @@
 extends "res://scripts/State_Machine.gd"
 
 var facing = 0
-var pfacing =0 
-var f1 = preload("res://f1.tres")
-var f0 = preload("res://f0.tres")
+onready var f1 = preload("res://tres/f1.tres")
+onready var f0 = preload("res://tres/f0.tres")
 onready var timer = get_node("Timer")
+onready var animator = parent.get_node("anim_player")
+onready var audio = parent.get_node("audio_player")
 
 func _ready():
 	add_state("idle")
@@ -61,45 +62,45 @@ func _update_state(_delta):
 func _enter_state(new_state,_old_state):
 	match new_state:
 		states.idle:
-			parent.get_node("audio_player").stop()
+			audio.stop()
 			match facing:
 				0:
-					parent.get_node("anim_player").play("IdleD")
+					animator.play("IdleD")
 				1:
-					parent.get_node("anim_player").play("IdleH")
+					animator.play("IdleH")
 				2:
-					parent.get_node("anim_player").play("IdleU")
+					animator.play("IdleU")
 				3:
-					parent.get_node("anim_player").play("IdleH")
+					animator.play("IdleH")
 
 		states.walking:
-			parent.set_mass(0.000001)
+			parent.set_mass(0.0000001)
 			parent.set_physics_material_override(f0)
-			if (!parent.get_node("audio_player").is_playing()):
-				parent.get_node("audio_player").play()
+			if (!audio.is_playing()):
+				audio.play()
 			match facing:
 				0:
-					parent.get_node("anim_player").play("WalkD")
+					animator.play("WalkD")
 				1:
-					parent.get_node("anim_player").set_flip_h(false)
-					parent.get_node("anim_player").play("WalkH")
+					animator.set_flip_h(false)
+					animator.play("WalkH")
 				2:
-					parent.get_node("anim_player").play("WalkU")
+					animator.play("WalkU")
 				3:
-					parent.get_node("anim_player").set_flip_h(true)
-					parent.get_node("anim_player").play("WalkH")
+					animator.set_flip_h(true)
+					animator.play("WalkH")
 		states.dodge:
 			match facing:
 				0:
-					parent.get_node("anim_player").play("DodgeD")
+					animator.play("DodgeD")
 				1:
-					parent.get_node("anim_player").set_flip_h(false)
-					parent.get_node("anim_player").play("DodgeH")
+					animator.set_flip_h(false)
+					animator.play("DodgeH")
 				2:
-					parent.get_node("anim_player").play("DodgeU")
+					animator.play("DodgeU")
 				3:
-					parent.get_node("anim_player").set_flip_h(true)
-					parent.get_node("anim_player").play("DodgeH")
+					animator.set_flip_h(true)
+					animator.play("DodgeH")
 					
 		states.pushing:
 			parent.set_mass(1)
@@ -110,31 +111,31 @@ func _enter_state(new_state,_old_state):
 				else:
 					facing = 2
 				
-			if (!parent.get_node("audio_player").is_playing()):
-				parent.get_node("audio_player").play()
+			if (!audio.is_playing()):
+				audio.play()
 			match facing:
 				0:
-					parent.get_node("anim_player").play("WalkD")
+					animator.play("WalkD")
 				1:
-					parent.get_node("anim_player").set_flip_h(false)
-					parent.get_node("anim_player").play("PushingH")
+					animator.set_flip_h(false)
+					animator.play("PushingH")
 				2:
-					parent.get_node("anim_player").play("PushingU")
+					animator.play("PushingU")
 				3:
-					parent.get_node("anim_player").set_flip_h(true)
-					parent.get_node("anim_player").play("PushingH")
+					animator.set_flip_h(true)
+					animator.play("PushingH")
 		states.dodge:
 			match facing:
 				0:
-					parent.get_node("anim_player").play("DodgeD")
+					animator.play("DodgeD")
 				1:
-					parent.get_node("anim_player").set_flip_h(false)
-					parent.get_node("anim_player").play("DodgeH")
+					animator.set_flip_h(false)
+					animator.play("DodgeH")
 				2:
-					parent.get_node("anim_player").play("DodgeU")
+					animator.play("DodgeU")
 				3:
-					parent.get_node("anim_player").set_flip_h(true)
-					parent.get_node("anim_player").play("DodgeH")
+					animator.set_flip_h(true)
+					animator.play("DodgeH")
 
 
 func _on_Timer_timeout():
