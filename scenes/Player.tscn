@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://tres/PlayerAnimations.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://scripts/PlayerFSM.gd" type="Script" id=3]
-[ext_resource path="res://assets/383660__deleted-user-7146007__footsteps-walking.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Sounds/walking.wav" type="AudioStream" id=4]
 [ext_resource path="res://tres/f0.tres" type="PhysicsMaterial" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -24,7 +24,7 @@ self_modulate = Color( 0.141176, 0.141176, 0.141176, 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 2 )
 animation = "PushingU"
-frame = 4
+frame = 6
 speed_scale = 2.0
 playing = true
 
@@ -43,7 +43,6 @@ one_shot = true
 [node name="audio_player" type="AudioStreamPlayer2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
 stream = ExtResource( 4 )
-pitch_scale = 1.4
 autoplay = true
 attenuation = 0.574349
 

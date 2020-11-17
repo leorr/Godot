@@ -37,6 +37,18 @@ position = Vector2( -23.6853, 41.5619 )
 [node name="RigidBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -61.5009, 26.5185 )
 
+[node name="RigidBody2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -44.5009, 5.5185 )
+
+[node name="RigidBody2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -19.5009, 2.5185 )
+
+[node name="RigidBody2D4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9.4991, 1.5185 )
+
+[node name="RigidBody2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 36.4991, 1.5185 )
+
 [node name="street-1" type="Sprite" parent="."]
 modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 show_behind_parent = true

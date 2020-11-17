@@ -29,7 +29,7 @@ func _update_state(_delta):
 		states.walking:
 			parent._handle_move_input()
 			if parent.get_colliding_bodies() != [] && (parent.motion.x == 0 || parent.motion.y==0):
-				audio.set_pitch_scale(2)
+				audio.set_pitch_scale(3)
 				audio.stop()
 				return states.pushing
 			if Input.is_action_just_pressed("action"):
