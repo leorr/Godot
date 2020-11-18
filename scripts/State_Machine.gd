@@ -1,4 +1,4 @@
-extends  Node
+extends Node
 class_name StateMachine
 
 var state = null setget set_state
@@ -7,8 +7,11 @@ var states = {}
 
 onready var parent = get_parent()
 
+func _ready():
+	set_physics_process(true)
 
-func _process(delta):
+
+func _physics_process(delta):
 	if state != null:
 		_refresh(delta)
 		var transition = _update_state(delta)

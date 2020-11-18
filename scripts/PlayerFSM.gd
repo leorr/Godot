@@ -11,15 +11,17 @@ func _ready():
 	add_state("idle")
 	add_state("walking")
 	add_state("dodge")
-	add_state("pushing")
+	add_state("atk")
 	call_deferred("set_state",states.idle)
 
 
-func _refresh(_delta):
+func _refresh(delta):
 	parent.set_z_index(parent.get_position().y)
 	parent._apply_movement()
 
 func _update_state(_delta):
+	if Input.is_action_just_pressed("action"):
+		return states.atk
 	match state:
 		states.idle:
 			parent._handle_move_input()
@@ -28,12 +30,6 @@ func _update_state(_delta):
 
 		states.walking:
 			parent._handle_move_input()
-			if parent.get_colliding_bodies() != [] && (parent.motion.x == 0 || parent.motion.y==0):
-				audio.set_pitch_scale(3)
-				audio.stop()
-				return states.pushing
-			if Input.is_action_just_pressed("action"):
-				return states.dodge
 			if parent.motion.x == 0 && parent.motion.y ==0 :
 				parent._handle_move_input()
 				return states.idle
@@ -50,18 +46,12 @@ func _update_state(_delta):
 						facing=2
 				
 				return states.walking
-		states.dodge:
-			parent._dodge()#stop handling the move input while in dodge
-			yield(timer,"timeout")#wait the timer, see _on_Timer_timeout()
-		states.pushing:
-			parent._handle_move_input()
-			if parent.motion == Vector2(0,0):
-				parent._handle_move_input()
-				return states.idle
-			else:
-				return states.pushing
+		states.atk:
+			parent._atk(facing)
+			yield(timer,"timeout")
 
 func _enter_state(new_state,_old_state):
+	
 	match new_state:
 		states.idle:
 			audio.stop()
@@ -76,8 +66,6 @@ func _enter_state(new_state,_old_state):
 					animator.play("IdleH")
 
 		states.walking:
-			parent.set_mass(0.0000001)
-			parent.set_physics_material_override(f0)
 			audio.set_pitch_scale(1.4)
 			if (!audio.is_playing()):
 				audio.play()
@@ -92,49 +80,13 @@ func _enter_state(new_state,_old_state):
 				3:
 					animator.set_flip_h(true)
 					animator.play("WalkH")
-		states.dodge:
+		states.atk:
 			match facing:
 				0:
-					animator.play("DodgeD")
-				1:
-					animator.set_flip_h(false)
-					animator.play("DodgeH")
-				2:
 					animator.play("DodgeU")
-				3:
-					animator.set_flip_h(true)
-					animator.play("DodgeH")
-					
-		states.pushing:
-			parent.set_mass(1)
-			parent.set_physics_material_override(f1)
-			if parent.motion.x == 0:
-				if parent.motion.y > 0:
-					facing = 0
-				else:
-					facing = 2
-				
-			if (!audio.is_playing()):
-				audio.set_pitch_scale(1)
-				audio.play()
-			match facing:
-				0:
-					animator.play("PushingD")
 				1:
 					animator.set_flip_h(false)
-					animator.play("PushingH")
-				2:
-					animator.play("PushingU")
-				3:
-					animator.set_flip_h(true)
-					animator.play("PushingH")
-		states.dodge:
-			match facing:
-				0:
-					animator.play("DodgeD")
-				1:
-					animator.set_flip_h(false)
-					animator.play("DodgeH")
+					animator.play("AtkH")
 				2:
 					animator.play("DodgeU")
 				3:

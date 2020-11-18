@@ -9,9 +9,3 @@ onready var anim2= get_node("light_sprite2")
 func _ready():
 	anim1.set_speed_scale(anim_speed)
 	anim2.set_speed_scale(anim_speed)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

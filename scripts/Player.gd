@@ -1,24 +1,24 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 var motion = Vector2()
 
 onready var timer = get_node("StateMachine").get_node("Timer")
 onready var colider = get_node("CollisionShape2D")
 
-var speed = 100
-
-func _ready():
-	set_contact_monitor(true)
-	set_max_contacts_reported(1)
+var speed = 90
 
 		
 func _apply_movement():
-	set_linear_velocity(motion)
+	move_and_slide(motion)
 
-func _dodge():
-	motion = motion * 2.5
+func _atk(var facing):
 	timer.start()
-
+	match facing:
+		0: motion = Vector2(0,5)
+		1: motion = Vector2(5,0)
+		2: motion = Vector2(0,-5)
+		3: motion = Vector2(-5,0)
+	
 	
 func _handle_move_input():
 	motion = Vector2()
