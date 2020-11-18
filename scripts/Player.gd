@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var motion = Vector2()
 
-onready var timer = get_node("StateMachine").get_node("Timer")
+onready var atkDuration = get_node("StateMachine").get_node("AtkDuration")
 onready var colider = get_node("CollisionShape2D")
 
 var speed = 90
@@ -12,7 +12,7 @@ func _apply_movement():
 	move_and_slide(motion)
 
 func _atk(var facing):
-	timer.start()
+	atkDuration.start()
 	match facing:
 		0: motion = Vector2(0,5)
 		1: motion = Vector2(5,0)

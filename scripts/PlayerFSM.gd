@@ -3,7 +3,7 @@ extends "res://scripts/State_Machine.gd"
 var facing = 0
 onready var f1 = preload("res://tres/f1.tres")
 onready var f0 = preload("res://tres/f0.tres")
-onready var timer = get_node("Timer")
+onready var atkDuration = get_node("AtkDuration")
 onready var animator = parent.get_node("anim_player")
 onready var audio = parent.get_node("audio_player")
 
@@ -48,7 +48,7 @@ func _update_state(_delta):
 				return states.walking
 		states.atk:
 			parent._atk(facing)
-			yield(timer,"timeout")
+			yield(atkDuration,"timeout")
 
 func _enter_state(new_state,_old_state):
 	

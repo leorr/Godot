@@ -20,7 +20,7 @@ self_modulate = Color( 0.141176, 0.141176, 0.141176, 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 2 )
 animation = "AtkH"
-frame = 2
+frame = 6
 speed_scale = 2.0
 playing = true
 
@@ -33,7 +33,7 @@ script = ExtResource( 3 )
 
 [node name="AtkDuration" type="Timer" parent="StateMachine"]
 process_mode = 0
-wait_time = 0.6
+wait_time = 0.5
 one_shot = true
 
 [node name="AtkCd" type="Timer" parent="StateMachine"]
