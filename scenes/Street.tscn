@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/OneDown.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28.0165, 71.0519 )
+extents = Vector2( 30.1605, 71.0519 )
 
 [node name="street-1" type="Sprite"]
 self_modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
@@ -17,7 +17,8 @@ priority = 5.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OneDown"]
-position = Vector2( 1, 0 )
+position = Vector2( 1.5, 0 )
 shape = SubResource( 1 )
+
 [connection signal="body_entered" from="OneDown" to="OneDown" method="_on_OneDown_body_entered"]
 [connection signal="body_exited" from="OneDown" to="OneDown" method="_on_OneDown_body_exited"]

@@ -106,15 +106,11 @@ action={
 
 [rendering]
 
-quality/2d/use_pixel_snap=true
+2d/snapping/use_gpu_pixel_snap=true
 threads/thread_model=2
-quality/filters/anisotropic_filter_level=1
 vram_compression/import_s3tc=false
 vram_compression/import_etc2=false
-quality/shadow_atlas/size=8192
-quality/shadow_atlas/quadrant_0_subdiv=2
-quality/shadow_atlas/quadrant_1_subdiv=3
-quality/shadow_atlas/quadrant_2_subdiv=4
-quality/shadow_atlas/quadrant_3_subdiv=5
+quality/filters/anisotropic_filter_level=1
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/depth/hdr=false
+quality/2d/use_pixel_snap=true

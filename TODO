@@ -1,0 +1,3 @@
+1.0 - Detecção de colisão no player, conseguir nome dos objetos a serem colididos
+1.1 - Controle da velocidade com base na colisão do player
+1.2 - Atualizar animações com velocidade relativa a velocidade do player
